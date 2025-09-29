@@ -1,34 +1,170 @@
-.navbar{
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  position: absolute;
+  width: 90%;
+  z-index: 100;
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+.hero {
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
-.navbar ul{
-  list-style-type : none;
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: fadeImages 25s infinite; 
+  z-index: -2;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+@keyframes fadeImages {
+  0% {
+    opacity: 0;
+    background-image: url('image/beranda/wayang_1.jpg');
+  }
+  4% { opacity: 1; }
+  16% { opacity: 1; }
+  20% { opacity: 0; }
+
+  20.01% {
+    opacity: 0;
+    background-image: url('image/beranda/wayang_2.jpg');
+  }
+  24% { opacity: 1; }
+  36% { opacity: 1; }
+  40% { opacity: 0; }
+
+  40.01% {
+    opacity: 0;
+    background-image: url('image/beranda/wayang_3.jpg');
+  }
+  44% { opacity: 1; }
+  56% { opacity: 1; }
+  60% { opacity: 0; }
+
+  60.01% {
+    opacity: 0;
+    background-image: url('image/beranda/wayang_4.jpg');
+  }
+  64% { opacity: 1; }
+  76% { opacity: 1; }
+  80% { opacity: 0; }
+
+  80.01% {
+    opacity: 0;
+    background-image: url('image/beranda/wayang_5.jpg');
+  }
+  84% { opacity: 1; }
+  96% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  margin-bottom: 0.2em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin-bottom: 2em;
+}
+
+#explore-btn {
+  padding: 12px 25px;
+  font-size: 1em;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#explore-btn:hover {
   background-color: white;
-  padding : 0px;
-  margin : 0px;
-  overflow : hidden;
+  color: black;
 }
 
-.navbar a{
-  color : var(--color-accent);
-  text-decoration : none;
-  padding : 15px;
-  display: block;
-  text-align:center;
+.content {
+  padding: 100px 5%;
+  text-align: center;
 }
 
-.navbar a:hover{
-  background-color : var(--color-accent);
-  color:white;
+.content-intro .pre-header {
+  font-size: 0.9em;
+  color: #777;
 }
 
-.navbar li{
-  float : left;
+.content-intro h2 {
+  font-size: 2.5em;
+  margin-top: 0.5em;
 }
 
-.content img{
-    width : 100%;
+.content-intro .content-logo img {
+  max-width: 150px;
+  margin-top: 1em;
 }
