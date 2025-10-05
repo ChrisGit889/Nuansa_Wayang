@@ -1,359 +1,450 @@
-const dataWayang = [
+[
     {
-        judul: "Nakula",
-        pembuat: "Sukarman",
-        tanggalDibuat: "1986/1989",
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Nakula",
+      "Asal": "India kuno",
+      "Pembuat": "Sukarman",
+      "Tanggal Dibuat": "1986/1989",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Nakula adalah anggota Pandawa yang dikenal sebagai penunggang kuda dan pemanah ulung yang jujur dan pandai menyimpan rahasia."
     },
     {
-        judul: "Singa Nila (Bali)",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Singa Nila (Bali)",
+      "Asal": "Bali",
+      "Pembuat": "tidak dikenal",
+      "Tanggal Dibuat": "tidak dikenal",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Singa Nila (Bali) adalah representasi karakter hewan mitologis khas Bali yang cenderung berperan sebagai kekuatan gaib yang harus dihadapi oleh protagonis."
     },
     {
-        judul: "Raden Lesmono Widagdo (Surakarta)",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Raden Lesmono Widagdo (Surakarta)",
+      "Asal": "Surakarta",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "tidak dikenal",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Raden Lesmono Widagdo adalah representasi kesetiaan, keberanian, dan pengorbanan seorang adik kepada kakaknya dalam tradisi pewayangan Jawa."
     },
     {
-        judul: "Raden Brotoseno",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang", "Boneka Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Prabu Rahwana (Surakarta)",
+      "Asal": "Surakarta",
+      "Pembuat": "Sukarman",
+      "Tanggal Dibuat": "1985",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Prabu Rahwana adalah raja raksasa Alengka dan tokoh antagonis utama dalam Ramayana karena perbuatannya menculik Dewi Sinta."
     },
     {
-        judul: "Prabu Sasra",
-        pembuat: "Sukarman",
-        tanggalDibuat: null,
-        jenis: ["Boneka Kulit", "Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Arjuna",
+      "Asal": "India",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "2009",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Arjuna adalah ksatria anggota Pandawa, putra ketiga Prabu Pandu, yang dikenal sebagai pemanah ulung, tampan, dan bijaksana."
     },
     {
-        judul: "Arjuna",
-        pembuat: null,
-        tanggalDibuat: "2009",
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Raden Patah",
+      "Asal": "Palembang",
+      "Pembuat": "Suryadi Wano Surhardjo",
+      "Tanggal Dibuat": "1975",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Raden Patah adalah tokoh sejarah dan wayang yang dikenal sebagai pendiri dan Sultan pertama Kesultanan Demak."
     },
     {
-        judul: "Raden Patah",
-        pembuat: "Suryadi Wano Surhardjo",
-        tanggalDibuat: "1975",
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat",
-        genre: "Wayang Sadad"
+      "Nama": "Bethoro Guru",
+      "Asal": "Tidak Diketahui",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Batara Guru adalah dewa yang menguasai alam para dewa dalam mitologi Jawa, yang memiliki ciri khusus bertangan empat dan berkaki lumpuh."
     },
     {
-        judul: "Prabu Kresna (Cirebon)",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Prabu Kresna (Cirebon)",
+      "Asal": "Cirebon",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Prabu Kresna adalah Raja Dwarawati, titisan Dewa Wisnu, yang dikenal sebagai penasihat ulung dan ahli strategi utama Pandawa."
     },
     {
-        judul: "Dursosono",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Dursosono",
+      "Asal": "Jawa",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Dursasana adalah adik Duryudana dari Kurawa yang terkenal karena kesombongan dan tindakan memalukannya saat berusaha menelanjangi Dewi Drupadi."
     },
     {
-        judul: "Raja TIiam",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Raja TIiam",
+      "Asal": "Sulawesi Selatan",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Raja TiIam adalah tokoh dari cerita pewayangan atau legenda yang berasal dari Sulawesi Selatan."
     },
     {
-        judul: "Prabu Baladewa (Cirebon)",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Prabu Baladewa (Cirebon)",
+      "Asal": "Cirebon",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Prabu Baladewa adalah Raja Mandura, kakak kandung Prabu Kresna, yang berwatak keras hati dan mudah marah tetapi jujur dan bijaksana."
     },
     {
-        judul: "Romo Jangkah",
-        pembuat: "Sukarman",
-        tanggalDibuat: "1985, 1989",
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Romo Jangkah",
+      "Asal": "Tidak Diketahui",
+      "Pembuat": "Sukarman",
+      "Tanggal Dibuat": "1985, 1989",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Romo Jangkah (Rama) adalah putra Raja Dasarata dan tokoh sentral dalam Ramayana yang dikenal adil dan bijaksana."
     },
     {
-        judul: "Pangeran Diponegoro",
-        pembuat: "Raden Mas Sayid",
-        tanggalDibuat: "1945/1950",
-        lokasi: "Jakarta, Indonesia, 6.2088,106.8456",
-        asal: "Diterima sebagai hadiah dari Wereldmuseum Rotterdam",
-        jenis: ["Boneka kulit", "Wayang kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Pangeran Diponegoro",
+      "Asal": "Jawa Tengah, Yogyakarta",
+      "Pembuat": "Raden Mas Sayid",
+      "Tanggal Dibuat": "1945/1950",
+      "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Pangeran Diponegoro adalah pahlawan nasional dari Kesultanan Yogyakarta yang memimpin Perang Jawa melawan penjajah Belanda."
     },
     {
-        judul: "Punto Dewo",
-        pembuat: "Sukarman",
-        tanggalDibuat: "1986/1989",
-        lokasi: "Jakarta Indonesia",
-        jenis: ["Boneka Kulit", "Wayang", "Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Punto Dewo",
+      "Asal": "Jawa",
+      "Pembuat": "Sukarman",
+      "Tanggal Dibuat": "1986/1989",
+      "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Punto Dewo adalah sulung dari Pandawa Lima dan Raja di Amarta yang terkenal dengan sifatnya yang sabar, jujur, bijaksana, dan berdarah putih."
     },
     {
-        judul: "Gatot Kaca",
-        pembuat: null,
-        tanggalDibuat: null,
-        lokasi: "Jakarta, Indonesia, -6.2088,106.8456",
-        jenis: ["Boneka Kulit", "Wayang", "Wayang Kulit", "Wayang kulit"],
-        medium: "Kulit kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Bung Karno",
+      "Asal": "Diterima sebagai hadiah dari Wereldmuseum Rotterdam",
+      "Pembuat": "Raden Mas Sayid",
+      "Tanggal Dibuat": "1945/1950",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Bung Karno adalah Proklamator dan Presiden pertama RI yang sangat mengagumi budaya wayang dan sering menggunakan filosofi kesatria Jawa."
     },
     {
-        judul: "Patih Sangkuni",
-        pembuat: "Bambang Suwarno",
-        tanggalDibuat: "2014",
-        lokasi: "Jakarta",
-        jenis: ["Wayang kulit", "Boneka kulit", "Wayang", "Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Gatot Kaca",
+      "Asal": "Jawa Tengah",
+      "Pembuat": "Wayan Winten",
+      "Tanggal Dibuat": "Abad 19",
+      "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Gatotkaca adalah putra Bima yang dijuluki 'Otot Kawat Tulang Besi' karena kesaktiannya mampu terbang dan kebal senjata."
     },
     {
-        judul: "Semar Lurah",
-        pembuat: "Saderi",
-        tanggalDibuat: "2010",
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Patih Sangkuni",
+      "Asal": "Gandara",
+      "Pembuat": "Bambang Suwarno",
+      "Tanggal Dibuat": "2014",
+      "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Patih Sangkuni adalah paman para Kurawa yang terkenal sangat licik dan menjadi dalang utama di balik perselisihan Bharatayudha."
     },
     {
-        judul: "Raden Bakhtiar",
-        pembuat: "Amak Rahimah",
-        tanggalDibuat: "1925",
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Semar Lurah",
+      "Asal": "Jawa",
+      "Pembuat": "Saderi",
+      "Tanggal Dibuat": "2010",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Semar adalah tokoh punakawan, penjelmaan Batara Ismaya, yang bertugas sebagai pengasuh, penasihat, dan guru spiritual bagi Pandawa."
     },
     {
-        judul: "Hanuman",
-        pembuat: "Sukarman",
-        tanggalDibuat: "1985/1989",
-        jenis: ["Wayang", "Boneka kulit", "Wayang Kulit", "Wayang kulit"],
-        medium: "Kulit kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Mohammad Hatta",
+      "Asal": "Diterima sebagai hadiah dari Wereldmuseum Rotterdam",
+      "Pembuat": "Raden Mas Sayid",
+      "Tanggal Dibuat": "1945/1950",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Mohammad Hatta adalah Proklamator dan Wakil Presiden pertama yang dikenal sangat jujur, disiplin, dan merupakan Bapak Koperasi Indonesia."
     },
     {
-        judul: "Bratasena",
-        pembuat: "Niin Neran Ciracas",
-        tanggalDibuat: null,
-        lokasi: "Jakarta, Indonesia",
-        jenis: ["Boneka Kulit", "Wayang", "Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Raden Bakhtiar",
+      "Asal": "Tidak Diketahui",
+      "Pembuat": "Amak Rahimah",
+      "Tanggal Dibuat": "1925",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Raden Bakhtiar adalah salah satu tokoh dalam Wayang Sasak di Lombok."
     },
     {
-        judul: "Bala Dewa",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        lokasi: "Jakarta, Indonesia",
-        jenis: ["Boneka kulit", "Wayang", "Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Hanuman",
+      "Asal": "India",
+      "Pembuat": "Sukarman",
+      "Tanggal Dibuat": "1985/1989",
+      "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Hanuman adalah kera putih berwujud manusia yang sangat setia dan berani sebagai senapati Prabu Rama dalam misi penyelamatan Dewi Sinta."
     },
     {
-        judul: "Anggada",
-        pembuat: "Sukasman",
-        tanggalDibuat: "1964",
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Bratasena",
+      "Asal": "Tidak Diketahui",
+      "Pembuat": "Niin Neran Ciracas",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Bratasena adalah nama masa muda dari Bima (Werkudara), Pandawa kedua yang berwatak tegas, jujur, dan berani."
     },
     {
-        judul: "Gondo Mono",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Baladewa",
+      "Asal": "Jawa Barat",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Prabu Baladewa adalah Raja Mandura, kakak Prabu Kresna, yang berwatak keras hati tetapi jujur dan bijaksana."
     },
     {
-        judul: "Raseksi",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit Kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Anggada",
+      "Asal": "India",
+      "Pembuat": "Sukasman",
+      "Tanggal Dibuat": "1964",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Anggada adalah wanara (kera) berbulu merah, putra Resi Subali, yang dikenal sangat tangkas dan setia sebagai senapati Prabu Rama."
     },
     {
-        judul: "Duryudono",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Gondomono",
+      "Asal": "Solo",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Patih Gondomono adalah Patih Kerajaan Hastina pada masa Prabu Pandu yang dikenal sakti dan jujur sebelum difitnah oleh Sengkuni."
     },
     {
-        judul: "Janoko",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Boneka Kulit", "Wayang Kulit", "Wayang"],
-        medium: "Kulit Kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Raseksi",
+      "Asal": "Tidak Diketahui",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "Tidak Dikehaui",
+      "Medium": "Kulit Kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Raseksi adalah sebutan umum dalam pewayangan untuk raksasa perempuan yang biasanya berwatak murka."
     },
     {
-        judul: "Panji Inukertapati",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        lokasi: "Jakarta, -6.2088,106.8456",
-        jenis: ["Boneka Kulit", "Wayang", "Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Duryudono",
+      "Asal": "India Utara",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Duryudana adalah sulung dari seratus Kurawa dan Raja Astina yang menjadi tokoh antagonis utama dalam Mahabharata karena sifat ambisiusnya."
     },
     {
-        judul: "Prabu Alam Dahur",
-        pembuat: "Amak Rahimah",
-        tanggalDibuat: "1925",
-        lokasi: "Jakarta, Indonesia",
-        jenis: ["Wayang", "Wayang Kulit", "Boneka Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Janoko",
+      "Asal": "Yogyakarta",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit Kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Janaka adalah nama lain dari Arjuna, ksatria Pandawa ketiga yang terkenal sangat tampan, cerdik, dan sakti dalam memanah."
     },
     {
-        judul: "Tugu Waseso",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Panji Inukertapati",
+      "Asal": "Jawa Timur",
+      "Pembuat": "Tidak diketahui",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Panji Inu Kertapati adalah putra mahkota Kerajaan Jenggala, tokoh utama roman klasik Jawa, yang sering menyamar mencari cinta sejatinya."
     },
     {
-        judul: "Bagong",
-        pembuat: "Saderi",
-        tanggalDibuat: "2010",
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Prabu Alam Dahur",
+      "Asal": "Tidak Diketahui",
+      "Pembuat": "Amak Rahimah",
+      "Tanggal Dibuat": "1925",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Prabu Alam Dahur adalah salah satu tokoh dalam Wayang Sasak di Lombok."
     },
     {
-        judul: "Raden Haryo MIngdo",
-        pembuat: ["Pringgo", "Mardi", "Jarot"],
-        tanggalDibuat: "1988/1992",
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Tugu Waseso",
+      "Asal": "Jawa",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "1934",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Prabu Tuguwasesa adalah raja Kerajaan Gilingwesi yang kekuatannya dikalahkan oleh Arjuna, lalu menampakkan wujud aslinya sebagai Bima (Werkudara)."
     },
     {
-        judul: "Lasmana Dikomara",
-        pembuat: null,
-        tanggalDibuat: null,
-        lokasi: "Jakarta, Indonesia",
-        jenis: ["Boneka kulit", "Wayang", "Wayang kulit", "Wayang Kulit"],
-        medium: "Kulit kerbau, Car air dicampur perekat"
+      "Nama": "Gatotkaca (Banyumas)",
+      "Asal": "Banyumas",
+      "Pembuat": "Tidak Dikenal",
+      "Tanggal Dibuat": "Abad 19",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Gatotkaca versi Banyumas memiliki ciri khas visual yang lebih sederhana dan realistis, tetapi tetap dikenal sebagai ksatria sakti putra Bima."
     },
     {
-        judul: "Bima Sena",
-        pembuat: "Sukarman",
-        tanggalDibuat: "2009",
-        jenis: ["Boneka Kulit", "Wayang", "Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Bagong",
+      "Asal": "Jawa",
+      "Pembuat": "Saderi",
+      "Tanggal Dibuat": "2010",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Bagong adalah anak bungsu dari Punakawan yang melambangkan rakyat jelata yang lugas, humoris, dan berani bersuara apa adanya."
     },
     {
-        judul: "Raden Werkudoro",
-        pembuat: "Bambang Suwarno",
-        tanggalDibuat: "2014",
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Raden Haryo MIngdo",
+      "Asal": "Tidak Diketahui",
+      "Pembuat": "Pringgo, Mardi, Jarot",
+      "Tanggal Dibuat": "1988/1992",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Raden Haryo Mingdo adalah tokoh tambahan yang jarang muncul atau nama lain dari tokoh minor dalam pewayangan."
     },
     {
-        judul: "Raden Danur Wendo",
-        pembuat: null,
-        tanggalDibuat: null,
-        jenis: ["Wayang", "Boneka Kulit", "Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur dengan perekat"
+      "Nama": "Bima (Banjar)",
+      "Asal": "Banjar",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "2009",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Bima dalam pewayangan Banjar adalah ksatria gagah perkasa, Pandawa kedua, yang jujur dan setia serta memiliki senjata Kuku Pancanaka."
     },
     {
-        judul: "Pratsongko",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Lasmana Dikomara",
+      "Asal": "Jawa",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Car air dicampur perekat",
+      "Penjelasan": "Lesmana Dikomara adalah putra mahkota Prabu Duryudana yang digambarkan berwatak manja, sombong, pengecut, dan gugur di tangan Abimanyu."
     },
     {
-        judul: "Prabu Rahwana",
-        pembuat: "Mbah Karmo",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat",
-        genre: "Wayang Palembang"
+      "Nama": "Bima Sena",
+      "Asal": "Jawa",
+      "Pembuat": "Sukarman",
+      "Tanggal Dibuat": "2009",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Bima Sena (Werkudara) adalah putra kedua Pandawa yang dikenal sebagai ksatria paling kuat, jujur, lugas, dan merupakan titisan dari Batara Bayu."
     },
     {
-        judul: "Onterja",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Boneka Kulit", "Wayang Kulit", "Wayang"],
-        medium: "Kulit Kerbau, Cat air dicampur perekat"
+      "Nama": "Raden Werkudoro",
+      "Asal": "Tidak Diketahui",
+      "Pembuat": "Bambang Suwarno",
+      "Tanggal Dibuat": "2014",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Raden Werkudara adalah Pandawa kedua dan putra titisan Batara Bayu yang dikenal karena kekuatan fisik luar biasa dan berwatak jujur serta teguh."
     },
     {
-        judul: "Gangge Mine",
-        pembuat: "Amak Rahimah",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat",
-        genre: "Wayang Sasak"
+      "Nama": "Raden Danur Wendo",
+      "Asal": "Jawa",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Raden Danur Wendo adalah tokoh pewayangan yang dikenal sebagai ksatria yang gagah perkasa."
     },
     {
-        judul: "Bisma",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Pratsongko",
+      "Asal": "India",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Prabu Wratsangka adalah putra bungsu Prabu Matswapati yang diangkat menjadi panglima perang Pandawa sebelum gugur di tangan Begawan Drona."
     },
     {
-        judul: "Prabu Brawijaya",
-        pembuat: "Suryadi Wanosuhardjo",
-        tanggalDibuat: "1975",
-        jenis: ["Wayang Kulit"],
-        medium: "Kulit kerbau, Cat air dicampur perekat",
-        genre: "Wayang Sadad"
+      "Nama": "Prabu Rahwana",
+      "Asal": "Palembang",
+      "Pembuat": "Mbah Karmo",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Prabu Rahwana (Dasamuka) adalah raja raksasa berkepala sepuluh dari Alengka dan antagonis utama Ramayana karena menculik Dewi Sinta."
     },
     {
-        judul: "Sayid Ibnu Umar",
-        pembuat: "Amak Rahimah",
-        tanggalDibuat: "1925",
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Onterja",
+      "Asal": "Jawa",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit Kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Onterja adalah putra sulung Bima dari Dewi Nagagini yang memiliki kesaktian luar biasa, termasuk kemampuan berjalan di dalam tanah."
     },
     {
-        judul: "Nala Gareng",
-        pembuat: "Saderi",
-        tanggalDibuat: "2010",
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Gangge Mine",
+      "Asal": "Tidak diketahui",
+      "Pembuat": "Amak Rahimah",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Gangge Mine adalah bidadari dari kahyangan yang dikutuk turun ke bumi, menjadi istri Prabu Santanu, dan ibu dari Resi Bisma."
     },
     {
-        judul: "Rahwana",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Syeikh Wali Lanang",
+      "Asal": "Tidak Diketahui",
+      "Pembuat": "Suryadi Wanosuhardjo",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Syeikh Wali Lanang adalah julukan lain dari Maulana Ishaq, seorang ulama penyebar Islam di Jawa Timur dan ayah dari Sunan Giri."
     },
     {
-        judul: "Dewi Sinta",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Bisma",
+      "Asal": "India",
+      "Pembuat": "Tidak diketahui",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Bisma (Dewabrata) adalah kakek yang dihormati oleh Pandawa dan Kurawa, dikenal karena sumpah dahsyatnya untuk tidak menikah seumur hidup demi takhta Hastinapura."
     },
     {
-        judul: "Hanoman",
-        pembuat: null,
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Prabu Brawijaya",
+      "Asal": "Kerajaan Majapahit",
+      "Pembuat": "Suryadi Wanosuhardjo",
+      "Tanggal Dibuat": "1975",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Prabu Brawijaya adalah gelar bagi beberapa raja di Majapahit, yang paling terkenal adalah raja terakhir yang dikisahkan memiliki putra Raden Patah."
     },
     {
-        judul: "Sri Rama",
-        pembuat: "Tidak dikenal",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Sayid Ibnu Umar",
+      "Asal": "Tidak diketahui",
+      "Pembuat": "Amak Rahimah",
+      "Tanggal Dibuat": "1925",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Sayid Ibnu Umar adalah tokoh dalam Wayang Menak (siklus cerita Amir Hamzah) yang diangkat menjadi Raja Kaos."
     },
     {
-        judul: "Erang Ping",
-        pembuat: "Gan Thwan Sing",
-        tanggalDibuat: "2005",
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Nala Gareng",
+      "Asal": "Jawa",
+      "Pembuat": "Saderi",
+      "Tanggal Dibuat": "2010",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Nala Gareng adalah putra sulung Semar dari Punakawan yang digambarkan memiliki cacat fisik sebagai simbol agar manusia selalu berhati-hati."
     },
     {
-        judul: "Umbu Karna",
-        pembuat: "Mbah Karmo",
-        tanggalDibuat: null,
-        jenis: ["Wayang Kulit", "Wayang"],
-        medium: "Kulit kerbau, Cat air dicampur perekat"
+      "Nama": "Hanoman",
+      "Asal": "India",
+      "Pembuat": "Tidak Diketahui",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Hanoman adalah kera putih berwujud manusia yang dikenal sangat setia dan berani sebagai senapati Prabu Rama dalam misi penyelamatan Dewi Sinta."
+    },
+    {
+      "Nama": "Raden Sadewo (Surakarta)",
+      "Asal": "Surakarta",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Raden Sadewa adalah Pandawa termuda yang dikenal sangat bijaksana, cerdas dalam ilmu perbintangan, dan berhasil meruwat Batari Durga."
+    },
+    {
+      "Nama": "Sri Rama",
+      "Asal": "India",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Sri Rama Wijaya adalah putra mahkota Ayodya dan titisan Dewa Wisnu, yang hidupnya didedikasikan untuk menegakkan dharma dan menumpas angkara murka Rahwana."
+    },
+    {
+      "Nama": "Dewi Sinta",
+      "Asal": "Tidak diketahui",
+      "Pembuat": "Sukarman",
+      "Tanggal Dibuat": "1986/1990",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Dewi Sinta adalah istri setia dari Sri Rama yang merupakan titisan Dewi Widowati dan menjadi simbol kemurnian, kesucian, serta keteguhan hati."
+    },
+    {
+      "Nama": "Raden Gunungsari (Surakarta)",
+      "Asal": "Surakarta",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Raden Gunungsari adalah adik Dewi Sekartaji dan tokoh utama dalam Serat Panji, digambarkan sebagai ksatria yang berwatak halus, rendah hati, dan bijaksana."
+    },
+    {
+      "Nama": "Umbu Karna",
+      "Asal": "Nusa Tenggara Timur",
+      "Pembuat": "Mbah Karmo",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Umbu Karna adalah adik kandung Prabu Rahwana yang berwujud raksasa besar, tetapi memiliki hati yang jujur dan nasionalisme tinggi sebagai pembela tanah air Alengka."
+    },
+    {
+      "Nama": "Prabu Sasra",
+      "Asal": "Tidak diketahui",
+      "Pembuat": "Sukarman",
+      "Tanggal Dibuat": "Tidak diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+      "Penjelasan": "Prabu Sasra merujuk pada Prabu Arjunasasrabahu, Raja Mahespati yang terkenal sakti mandraguna dan merupakan titisan Dewa Wisnu yang pernah mengalahkan Prabu Rahwana."
+    },
+    {
+      "Nama": "Abimanyu",
+      "Asal": "India",
+      "Pembuat": "Tidak dikenal",
+      "Tanggal Dibuat": "Tidak Diketahui",
+      "Medium": "Kulit kerbau, Cat air dicampur perekat",
+      "Penjelasan": "Abimanyu adalah putra Arjuna dan Dewi Subadra yang berwatak lembut namun sangat pemberani, wafat secara heroik dan tragis setelah berhasil memecahkan formasi Cakrabyuha dalam Perang Bharatayudha."
     }
-];
+  ]
