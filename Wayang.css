@@ -12,17 +12,20 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff; 
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08); 
-  padding: 15px 70px; 
+  /* Bayangan lebih tegas tapi tetap halus */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); 
+  /* Padding horizontal lebih minimalis */
+  padding: 18px 50px; 
   position: sticky; 
   top: 0;
   z-index: 100;
 }
 
 .professional-navbar .logo {
-  font-weight: 700;
-  font-size: 1.5em;
+  font-weight: 800; 
+  font-size: 1.6em;
   color: #1f2937; 
+  letter-spacing: 0.5px;
 }
 
 .professional-navbar ul {
@@ -30,20 +33,22 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  gap: 10px;
 }
 
 .professional-navbar a {
   text-decoration: none;
-  color: #6b7280; 
-  padding: 8px 15px;
-  font-size: 0.95em;
+  color: #4b5563; 
+  padding: 6px 14px; 
+  font-size: 0.9em; 
+  font-weight: 600;
   transition: color 0.3s, border-bottom 0.3s;
 }
 
 .professional-navbar a:hover,
 .professional-navbar a.active {
-  color: #a47e1b ;
-  border-bottom: 2px solid #a47e1b ;
+  color: #a80000; 
+  border-bottom: 2px solid #a80000;
 }
 
 /* 2. BERANDA: HERO SECTION */
@@ -377,4 +382,149 @@ body {
   background-color: #fafafa; 
   border-left: 3px solid #a47e1b; 
   border-radius: 0 8px 8px 0;
+}
+
+/* ======================================================= */
+/* 6. BERANDA: EKSPLORASI CARD (Gambar 2 Style)            */
+/* ======================================================= */
+
+.exploration-area {
+  padding: 60px 50px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.area-subtitle {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 5px;
+}
+
+.area-description {
+  font-size: 1em;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+/* --- CARD UTAMA --- */
+.main-exploration-card {
+  position: relative;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Ganti URL ini dengan gambar wayang yang sesuai */
+  background-image: url('image/beranda/background_wayang_explore.jpg'); 
+  background-size: cover;
+  background-position: center;
+  /* Lapisan gelap (overlay) agar teks putih menonjol */
+  background-color: rgba(0, 0, 0, 0.5); 
+  background-blend-mode: multiply;
+}
+
+.card-content {
+  position: relative;
+  z-index: 10;
+  color: white;
+  text-align: left;
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-content h4 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1.1em;
+  color: #e5e7eb;
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+.explore-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #a80000; /* Warna aksen Anda */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+  background-color: #850000;
+}
+
+/* --- GRID CARD KECIL --- */
+.secondary-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+}
+
+.secondary-card {
+  display: block;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.secondary-card:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.secondary-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.secondary-card .card-info {
+  padding: 20px;
+}
+
+.secondary-card .category {
+  font-size: 0.7em;
+  font-weight: 700;
+  color: #a80000;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.secondary-card h5 {
+  font-size: 1.1em;
+  color: #1f2937;
+  margin: 5px 0;
+}
+
+.secondary-card p {
+  font-size: 0.9em;
+  color: #6b7280;
+  margin: 0;
 }
