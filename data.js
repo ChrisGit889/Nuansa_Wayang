@@ -15,7 +15,7 @@ const dataWayang = [
     "Tanggal Dibuat": "tidak dikenal",
     "Medium": "Kulit kerbau, Cat air dicampur perekat",
     "Penjelasan": "Singa Nila (Bali) adalah representasi karakter hewan mitologis khas Bali yang perannya cenderung sebagai kekuatan alam atau gaib yang harus dihadapi tokoh protagonis.",
-    "Gambar": "image/wayang/Nakula.png",
+    "Gambar": "image/wayang/Singa_Nila.png",
   },
   {
     "Nama": "Raden Lesmono Widagdo (Surakarta)",
