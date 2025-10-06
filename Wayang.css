@@ -1,4 +1,3 @@
-/* 1. GAYA DASAR & NAVBAR (Profesional)                    */
 body {
   font-family: 'Inter', sans-serif; 
   margin: 0;
@@ -7,6 +6,7 @@ body {
   color: #333;
 }
 
+/* 1. NAVBAR UNIVERSAL (Profesional Style)                 */
 .professional-navbar {
   display: flex;
   justify-content: space-between;
@@ -42,11 +42,99 @@ body {
 
 .professional-navbar a:hover,
 .professional-navbar a.active {
-  color: #a80000; 
+  color: #a80000;
   border-bottom: 2px solid #a80000;
 }
 
-/*2. HEADER & KONTROL FILTER */
+/* 2. BERANDA: HERO SECTION */
+.home-header {
+  position: absolute;
+  width: 90%;
+  padding: 15px 5%;
+  background-color: transparent !important; 
+  box-shadow: none !important;
+}
+
+.home-header a, .home-header .logo {
+  color: white !important;
+}
+.home-header a.active {
+  border-bottom: 2px solid white !important;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: fadeImages 25s infinite; 
+  z-index: -2;
+  background-image: url('image/beranda/wayang_1.jpg');
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+@keyframes fadeImages {
+  0% { opacity: 0; background-image: url('image/beranda/wayang_1.jpg'); }
+  4% { opacity: 1; }
+  16% { opacity: 1; }
+  20% { opacity: 0; }
+  20.01% { opacity: 0; background-image: url('image/beranda/wayang_2.jpg'); }
+  24% { opacity: 1; }
+  36% { opacity: 1; }
+  40% { opacity: 0; }
+  40.01% { opacity: 0; background-image: url('image/beranda/wayang_3.jpg'); }
+  44% { opacity: 1; }
+  56% { opacity: 1; }
+  60% { opacity: 0; }
+  60.01% { opacity: 0; background-image: url('image/beranda/wayang_4.jpg'); }
+  64% { opacity: 1; }
+  76% { opacity: 1; }
+  80% { opacity: 0; }
+  80.01% { opacity: 0; background-image: url('image/beranda/wayang_5.jpg'); }
+  84% { opacity: 1; }
+  96% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  font-weight: 800; 
+  margin-bottom: 0.1em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  max-width: 600px;
+  margin: 0 auto 2em auto;
+}
+
+/* 3. HALAMAN TOKOH*/
 .content-tokoh {
   padding: 60px 50px;
   text-align: center;
@@ -92,7 +180,7 @@ body {
   box-shadow: 0 0 0 3px rgba(168, 0, 0, 0.1);
 }
 
-/* 3. GRID GALERI*/
+/* 4. HALAMAN TOKOH: GRID GALERI (Kartu Profesional)*/
 .wayang-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
@@ -121,7 +209,7 @@ body {
   object-fit: cover;
   object-position: center top; 
   transition: transform 0.5s;
-  padding: 0; 
+  padding: 0;
   border-radius: 12px 12px 0 0; 
 }
 
@@ -129,6 +217,7 @@ body {
   transform: scale(1.05); 
 }
 
+/* 5.Pop-up Modern & Clean */
 .modal {
   display: none; 
   position: fixed; 
@@ -171,8 +260,7 @@ body {
   transition: color 0.2s;
 }
 
-.close-button:hover,
-.close-button:focus {
+.close-button:hover, .close-button:focus {
   color: #333;
   cursor: pointer;
 }
@@ -205,7 +293,7 @@ body {
 #modal-wayang-gambar {
   width: 100%;
   height: auto;
-  object-fit: contain; 
+  object-fit: contain;
   display: block;
 }
 

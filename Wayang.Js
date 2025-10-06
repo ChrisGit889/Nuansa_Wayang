@@ -1,8 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    if (typeof dataWayang === 'undefined' || !Array.isArray(dataWayang)) {
-        console.error("Error: Array dataWayang tidak ditemukan atau formatnya salah.");
-        return; 
+    // 1. Muat Navbar
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            const navContainer = document.getElementById('navbar-container');
+            if (navContainer) {
+                navContainer.innerHTML = data;
+                highlightActivePage(); // Panggil fungsi highlight
+            }
+        })
+        .catch(error => console.error('Gagal memuat navbar:', error));
+
+    // 2. Fungsi untuk Highlight Halaman Aktif
+    function highlightActivePage() {
+        const path = window.location.pathname;
+        let currentPage = path.substring(path.lastIndexOf('/') + 1).replace('.html', '');
+        
+        // Kasus spesial jika pathnya adalah root atau index (misalnya 'beranda.html')
+        if (!currentPage || currentPage === 'index') {
+            currentPage = 'beranda';
+        }
+
+        const navLinks = document.querySelectorAll('.professional-navbar a');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('data-page');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active'); // Hapus jika tidak aktif
+            }
+        });
     }
+
+   
+});
 
     // --- DOM Elements ---
     const wayangGridContainer = document.getElementById('wayang-grid-container');
@@ -136,4 +168,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     applyFiltersAndSort();
-});
