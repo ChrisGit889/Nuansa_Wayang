@@ -12,9 +12,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff; 
-  /* Bayangan lebih tegas tapi tetap halus */
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); 
-  /* Padding horizontal lebih minimalis */
   padding: 18px 50px; 
   position: sticky; 
   top: 0;
@@ -47,8 +45,8 @@ body {
 
 .professional-navbar a:hover,
 .professional-navbar a.active {
-  color: #a80000; 
-  border-bottom: 2px solid #a80000;
+  color: #fad643; 
+  border-bottom: 2px solid #fad643;
 }
 
 /* 2. BERANDA: HERO SECTION */
@@ -67,7 +65,7 @@ body {
 
 #explore-btn:hover {
   background-color: white; 
-  color: #a47e1b ;
+  color: #fad643;
   border-color: white;
 }
 
@@ -218,11 +216,11 @@ body {
 .filter-controls input:focus, 
 .filter-controls select:focus {
   border-color: #a47e1b; 
-  outline: none;
+  outline: none; 
   box-shadow: 0 0 0 3px rgba(168, 0, 0, 0.1);
 }
 
-/* 4. HALAMAN TOKOH: GRID GALERI (Kartu Profesional)*/
+/* 4. HALAMAN TOKOH*/
 .wayang-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
@@ -384,10 +382,7 @@ body {
   border-radius: 0 8px 8px 0;
 }
 
-/* ======================================================= */
-/* 6. BERANDA: EKSPLORASI CARD (Gambar 2 Style)            */
-/* ======================================================= */
-
+/* 6. BERANDA: EKSPLORASI CARD*/
 .exploration-area {
   padding: 60px 50px;
   text-align: center;
@@ -416,6 +411,7 @@ body {
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background-color: #6f6f6f;
 }
 
 .card-background-image {
@@ -424,25 +420,21 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Ganti URL ini dengan gambar wayang yang sesuai */
-  background-image: url('image/beranda/background_wayang_explore.jpg'); 
-  background-size: cover;
-  background-position: center;
-  /* Lapisan gelap (overlay) agar teks putih menonjol */
-  background-color: rgba(0, 0, 0, 0.5); 
-  background-blend-mode: multiply;
+  object-fit: cover;
+  opacity: 0.3;
 }
 
 .card-content {
   position: relative;
   z-index: 10;
   color: white;
-  text-align: left;
+  text-align: center; 
   padding: 40px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; 
+  align-items: center;
 }
 
 .card-content h4 {
@@ -455,23 +447,29 @@ body {
 .card-content p {
   font-size: 1.1em;
   color: #e5e7eb;
-  margin-bottom: 25px;
+  margin: 0 auto 25px auto;
   max-width: 600px;
 }
 
 .explore-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #a80000; /* Warna aksen Anda */
+  display: inline-block; 
+  width: auto;
+  padding: 10px 20px; 
+  background-color: transparent;
   color: white;
+  border: 2px solid white;
+  
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 4px; 
   font-weight: 600;
+  font-size: 0.95em; 
   transition: background-color 0.3s;
 }
 
 .explore-button:hover {
-  background-color: #850000;
+  background-color: #a47e1b ; 
+  color: white;
+  
 }
 
 /* --- GRID CARD KECIL --- */
@@ -511,7 +509,7 @@ body {
 .secondary-card .category {
   font-size: 0.7em;
   font-weight: 700;
-  color: #a80000;
+  color: #a47e1b ;
   letter-spacing: 1px;
   margin-bottom: 5px;
   display: block;
