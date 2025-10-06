@@ -4,28 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuansa Wayang</title>
-    <link rel="stylesheet" href="wayang.css">
-
+    <title>Tokoh Wayang | Nuansa Wayang</title>
+    <link rel="stylesheet" href="Wayang.css"> 
 </head>
 
 <body>
-    <div class="container">
-        <div class="navbar">
-            <ul class="nav-links">
+    <header>
+        <div class="logo"><a href="beranda.html">NUANSA WAYANG</a></div>
+        <nav>
+            <ul>
                 <li><a href="beranda.html">Beranda</a></li>
                 <li><a href="eksplorasi.html">Eksplorasi</a></li>
-                <li><a href="tokoh.html">Tokoh</a></li>
+                <li><a href="tokoh.html" class="active">Tokoh</a></li>
                 <li><a href="galeri.html">Galeri</a></li>
                 <li><a href="museum.html">Museum</a></li>
             </ul>
-            <input type="checkbox" id="menu-toggle" hidden>
+        </nav>
+    </header>
 
-        </div>
-        <main>
+    <main>
+        <section class="tokoh-page-content">
+            <div class="header-tokoh">
+                <div class="info-box">
+                    <h2>Temukan lebih dari 50 Tokoh Wayang</h2>
+                    <p>Nikmati indahnya setiap detail wayang kulit yang mempesona.</p>
+                    <button id="lihat-semua-btn" class="main-button">Lihat Semua Tokoh</button>
+                </div>
+            </div>
 
-        </main>
-    </div>
+            <div id="filter-section" style="display: none;">
+                <input type="text" id="search-tokoh-input" placeholder="Cari Nama, Asal, atau Pembuat Tokoh...">
+                <select id="sort-select">
+                    <option value="default">Urutkan (Default)</option>
+                    <option value="asc">Nama A - Z</option>
+                    <option value="desc">Nama Z - A</option>
+                </select>
+            </div>
+
+            <div id="tokoh-galeri" class="wayang-grid" style="display: none;">
+                </div>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+
+    <script src="Wayang.js"></script> 
+
 </body>
-
 </html>
