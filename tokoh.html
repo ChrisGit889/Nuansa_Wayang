@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tokoh Wayang | NUANSA WAYANG</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Wayang.css"> 
 </head>
 <body>
-    <header class="navbar">
+    <header class="navbar professional-navbar"> 
         <div class="logo">NUANSA WAYANG</div>
         <nav>
             <ul>
                 <li><a href="beranda.html">Beranda</a></li>
+                <li><a href="eksplorasi.html">Eksplorasi</a></li>
                 <li><a href="tokoh.html" class="active">Tokoh</a></li>
-                </ul>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="museum.html">Museum</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -22,7 +26,7 @@
             <h1>Temukan lebih dari 50 Tokoh Wayang</h1>
             <p>Nikmati indahnya setiap detail wayang kulit yang mempesona.</p>
 
-            <div class="filter-controls">
+            <div class="filter-controls" id="filter-controls">
                 <input type="text" id="search-input" placeholder="Cari Nama, Asal, atau Pembuat Tokoh...">
                 <select id="sort-select">
                     <option value="default">Urutkan (Default)</option>

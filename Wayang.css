@@ -1,230 +1,132 @@
+/* 1. GAYA DASAR & NAVBAR (Profesional)                    */
 body {
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif; 
   margin: 0;
-  background-color: #f4f4f4;
+  padding: 0;
+  background-color: #f4f7f9;
   color: #333;
 }
 
-header {
+.professional-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 5%;
-  position: absolute;
-  width: 90%;
+  background-color: #ffffff; 
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08); 
+  padding: 15px 70px; 
+  position: sticky; 
+  top: 0;
   z-index: 100;
 }
 
-.logo a {
-  text-decoration: none;
-  color: white;
+.professional-navbar .logo {
+  font-weight: 700;
   font-size: 1.5em;
-  font-weight: bold;
+  color: #1f2937; 
 }
 
-nav ul {
+.professional-navbar ul {
   list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
-nav ul li {
-  margin-left: 25px;
-}
-
-nav ul li a {
+.professional-navbar a {
   text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s;
+  color: #6b7280; 
+  padding: 8px 15px;
+  font-size: 0.95em;
+  transition: color 0.3s, border-bottom 0.3s;
 }
 
-nav ul li a:hover {
-  color: #ddd;
+.professional-navbar a:hover,
+.professional-navbar a.active {
+  color: #a80000; 
+  border-bottom: 2px solid #a80000;
 }
 
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  animation: fadeImages 25s infinite; 
-  z-index: -2;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-}
-
-@keyframes fadeImages {
-  0% {
-    opacity: 0;
-    background-image: url('image/beranda/wayang_1.jpg');
-  }
-  4% { opacity: 1; }
-  16% { opacity: 1; }
-  20% { opacity: 0; }
-
-  20.01% {
-    opacity: 0;
-    background-image: url('image/beranda/wayang_2.jpg');
-  }
-  24% { opacity: 1; }
-  36% { opacity: 1; }
-  40% { opacity: 0; }
-
-  40.01% {
-    opacity: 0;
-    background-image: url('image/beranda/wayang_3.jpg');
-  }
-  44% { opacity: 1; }
-  56% { opacity: 1; }
-  60% { opacity: 0; }
-
-  60.01% {
-    opacity: 0;
-    background-image: url('image/beranda/wayang_4.jpg');
-  }
-  64% { opacity: 1; }
-  76% { opacity: 1; }
-  80% { opacity: 0; }
-
-  80.01% {
-    opacity: 0;
-    background-image: url('image/beranda/wayang_5.jpg');
-  }
-  84% { opacity: 1; }
-  96% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-.hero-content h1 {
-  font-size: 4em;
-  margin-bottom: 0.2em;
-}
-
-.hero-content p {
-  font-size: 1.2em;
-  max-width: 600px;
-  margin-bottom: 2em;
-}
-
-#explore-btn {
-  padding: 12px 25px;
-  font-size: 1em;
-  color: white;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-#explore-btn:hover {
-  background-color: white;
-  color: black;
-}
-
-.content {
-  padding: 100px 5%;
-  text-align: center;
-}
-
-.content-intro .pre-header {
-  font-size: 0.9em;
-  color: #777;
-}
-
-.content-intro h2 {
-  font-size: 2.5em;
-  margin-top: 0.5em;
-}
-
-.content-intro .content-logo img {
-  max-width: 150px;
-  margin-top: 1em;
-}
-
-/* --- CSS Khusus Halaman Tokoh --- */
-
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f8f8;
-}
-
+/*2. HEADER & KONTROL FILTER */
 .content-tokoh {
-  padding: 50px;
+  padding: 60px 50px;
   text-align: center;
+}
+
+.hero-tokoh h1 {
+  font-size: 2.5em;
+  font-weight: 800; 
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.hero-tokoh p {
+  font-size: 1.1em;
+  color: #6b7280;
+  margin-bottom: 40px;
 }
 
 .filter-controls {
-  margin: 30px auto;
+  margin: 30px auto 50px auto; 
+  max-width: 800px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 
-.filter-controls input, .filter-controls select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.filter-controls input, 
+.filter-controls select {
+  padding: 12px 15px; 
+  border: 1px solid #e5e7eb; 
+  border-radius: 8px; 
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+  transition: border-color 0.3s;
   width: 300px;
+  font-size: 1em;
 }
 
+.filter-controls input:focus, 
+.filter-controls select:focus {
+  border-color: #a80000; 
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(168, 0, 0, 0.1);
+}
+
+/* 3. GRID GALERI*/
 .wayang-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
   gap: 20px;
-  padding: 20px 50px;
+  padding: 0 50px 60px 50px;
 }
 
 .wayang-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
+  background-color: #ffffff;
+  border: none; 
+  border-radius: 12px; 
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
 }
 
 .wayang-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px); 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
 }
 
 .wayang-item img {
   width: 100%;
-  height: 250px;
+  height: 300px; 
   object-fit: cover;
-  object-position: center; 
-  padding: 0;
-  border-radius: 8px 8px 0 0;
+  object-position: center top; 
+  transition: transform 0.5s;
+  padding: 0; 
+  border-radius: 12px 12px 0 0; 
+}
+
+.wayang-item:hover img {
+  transform: scale(1.05); 
 }
 
 .modal {
@@ -242,12 +144,12 @@ body {
 }
 
 .modal-content {
-  background-color: #ffffff;
+  background-color: #ffffff; 
   margin: 5% auto; 
-  padding: 40px;
+  padding: 40px; 
   width: 90%; 
   max-width: 800px; 
-  border-radius: 16px;
+  border-radius: 16px; 
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); 
   position: relative;
   text-align: left;
@@ -260,8 +162,8 @@ body {
 }
 
 .close-button {
-  color: #999;
-  position: absolute;
+  color: #999; 
+  position: absolute; 
   top: 20px;
   right: 20px;
   font-size: 32px;
@@ -277,38 +179,38 @@ body {
 
 .modal-title {
   text-align: center;
-  margin-top: 0;
+  margin-top: 0; 
   margin-bottom: 30px; 
   font-size: 1.8em;
-  color: #1a1a1a;
-  font-weight: 600;
-  border-bottom: 2px solid #eeeeee;
+  color: #1f2937; 
+  font-weight: 600; 
+  border-bottom: 2px solid #eeeeee; 
   padding-bottom: 15px;
 }
 
 .modal-body-content {
   display: flex;
-  gap: 40px;
-  align-items: flex-start;
+  gap: 40px; 
+  align-items: flex-start; 
 }
 
 .modal-image-container {
-  flex: 0 0 40%;
+  flex: 0 0 40%; 
   max-width: 320px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
 }
 
 #modal-wayang-gambar {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain; 
   display: block;
 }
 
 .modal-text-detail {
-  flex: 1;
+  flex: 1; 
   padding-top: 5px;
 }
 
@@ -319,11 +221,11 @@ body {
   display: flex;
   justify-content: space-between;
   padding-bottom: 5px;
-  border-bottom: 1px dashed #f0f0f0;
+  border-bottom: 1px dashed #f0f0f0; 
 }
 
 .detail-group p strong {
-  font-weight: 500;
+  font-weight: 500; 
   color: #333;
 }
 
@@ -331,7 +233,7 @@ body {
   border: 0;
   height: 1px;
   background-color: #ddd;
-  margin: 25px 0;
+  margin: 25px 0; 
 }
 
 .penjelasan-label {
@@ -343,11 +245,11 @@ body {
 
 .penjelasan-text {
   font-size: 1em;
-  color: #666;
-  line-height: 1.6;
+  color: #666; 
+  line-height: 1.6; 
   font-style: italic;
   padding: 10px;
-  background-color: #fafafa;
-  border-left: 3px solid #a80000;
+  background-color: #fafafa; 
+  border-left: 3px solid #a80000; 
   border-radius: 0 8px 8px 0;
 }
