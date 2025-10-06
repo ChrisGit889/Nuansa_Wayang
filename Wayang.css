@@ -6,7 +6,7 @@ body {
   color: #333;
 }
 
-/* 1. NAVBAR UNIVERSAL (Profesional Style)                 */
+/* 1. NAVBAR UNIVERSAL */
 .professional-navbar {
   display: flex;
   justify-content: space-between;
@@ -42,11 +42,48 @@ body {
 
 .professional-navbar a:hover,
 .professional-navbar a.active {
-  color: #a80000;
-  border-bottom: 2px solid #a80000;
+  color: #a47e1b ;
+  border-bottom: 2px solid #a47e1b ;
 }
 
 /* 2. BERANDA: HERO SECTION */
+#explore-btn {
+  padding: 14px 30px; 
+  font-size: 1.1em; 
+  color: white; 
+  background-color: transparent; 
+  border: 2px solid white; 
+  
+  border-radius: 8px; 
+  cursor: pointer;
+  text-decoration: none; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#explore-btn:hover {
+  background-color: white; 
+  color: #a47e1b ;
+  border-color: white;
+}
+
+.content {
+  padding: 100px 5%;
+}
+
+.content-intro {
+    text-align: center;
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.content-intro .content-logo img {
+    max-width: 150px;
+    margin-top: 1em;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .home-header {
   position: absolute;
   width: 90%;
@@ -175,7 +212,7 @@ body {
 
 .filter-controls input:focus, 
 .filter-controls select:focus {
-  border-color: #a80000; 
+  border-color: #a47e1b; 
   outline: none;
   box-shadow: 0 0 0 3px rgba(168, 0, 0, 0.1);
 }
@@ -338,6 +375,6 @@ body {
   font-style: italic;
   padding: 10px;
   background-color: #fafafa; 
-  border-left: 3px solid #a80000; 
+  border-left: 3px solid #a47e1b; 
   border-radius: 0 8px 8px 0;
 }
