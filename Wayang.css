@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: #f4f7f9;
   color: #333;
+  overflow-x: hidden; 
 }
 
 /* 1. NAVBAR UNIVERSAL */
@@ -403,7 +404,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* --- CARD UTAMA --- */
 .main-exploration-card {
   position: relative;
   height: 300px;
@@ -411,7 +411,7 @@ body {
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  background-color: #6f6f6f;
+  background-color: #626262;
 }
 
 .card-background-image {
@@ -467,12 +467,11 @@ body {
 }
 
 .explore-button:hover {
-  background-color: #a47e1b ; 
+  background-color: #9c772a ; 
   color: white;
   
 }
 
-/* --- GRID CARD KECIL --- */
 .secondary-cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -525,4 +524,144 @@ body {
   font-size: 0.9em;
   color: #6b7280;
   margin: 0;
+}
+
+/* 7.HALAMAN FAKTA*/
+html {
+  overflow-x: hidden; 
+}
+
+.fakta-section .author {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.scroll-indicator {
+  width: 100%;
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.fakta-content .author {
+  margin-bottom: 0;
+  font-size: 1.1em;
+}
+
+.scroll-divider {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border: none;
+  margin: 0 auto 15px auto;
+  opacity: 0.8;
+}
+
+.scroll-down-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; 
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1); 
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-down-icon:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(2px);
+}
+
+main#fakta-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; 
+  -webkit-overflow-scrolling: touch; 
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  overflow-x: hidden; 
+}
+
+.fakta-section {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white; 
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  width: 100%;
+}
+
+.fakta-section .fakta-content {
+  position: relative;
+  z-index: 2; 
+  padding: 20px;
+  max-width: 800px;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fakta-number {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.fakta-detail {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.hero-fakta {
+  background-image: url('image/Beranda/wayang_2.jpg');
+}
+
+#fakta-1 {
+  background-image: url('image/Beranda/wayang_4.jpg'); 
+}
+
+#fakta-2 {
+  background-image: url('image/Beranda/wayang_1.jpg'); 
+}
+
+#fakta-3 {
+  background-image: url('image/fakta/Penonton.jpg'); 
+}
+
+#fakta-4 {
+  background-image: url('image/fakta/Kulit.jpg'); 
+}
+
+#fakta-5 {
+  background-image: url('image/fakta/Kayon.jpg'); 
+}
+
+#fakta-6 {
+  background-image: url('image/fakta/UNESCO.png'); 
+}
+
+#fakta-7 {
+  background-image: url('image/fakta/Mahabharata.jpg');
+}
+
+#fakta-8 {
+  background-image: url('image/fakta/dalang.jpg'); 
 }
