@@ -726,3 +726,263 @@ main#fakta-container {
 #fakta-8 {
   background-image: url('image/perlengkapan/Letak.jpg'); 
 }
+
+/* 9. GAYA KHUSUS HALAMAN SEJARAH */
+.hero-fakta[id="fakta-hero"] {
+  background-image: url('image/Beranda/wayang_3.jpg'); 
+}
+
+#fakta-1 {   
+  background-image: url('image/fakta/UNESCO.png'); 
+}
+
+#fakta-2 {
+  background-image: url('image/Beranda/wayang_2.jpg'); 
+}
+
+#fakta-3 {
+  background-image: url('image/sejarah/adab.jpg'); 
+}
+
+#fakta-4 {
+  background-image: url('image/sejarah/sejarah.jpg'); 
+}
+
+#fakta-5 {
+  background-image: url('image/sejarah/sejarah2.jpg'); 
+}
+
+/* ======================================================= */
+/* 9. GAYA BARU: PANDAWA & TEACHING SECTION (Gambar 3)     */
+/* ======================================================= */
+
+.teaching-section {
+  padding: 60px 50px 20px 50px; /* Padding atas bawah yang rapi */
+  background-color: #f4f7f9; /* Sama dengan body background */
+}
+
+.lesson-card {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #1f2937; /* Background gelap */
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.lesson-card h4 {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.lesson-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
+  color: #1f2937;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.lesson-button:hover {
+  background-color: #eeeeee;
+}
+
+/* --- GRID PANDAWA --- */
+.pandawa-section {
+  padding: 40px 50px 80px 50px;
+  text-align: center;
+}
+
+.pandawa-section h2 {
+  margin-bottom: 40px;
+}
+
+.pandawa-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pandawa-item {
+  display: block;
+  width: 20%;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+.pandawa-item:hover {
+  transform: translateY(-5px);
+}
+
+.pandawa-item img {
+  width: 100%;
+  height: 180px; /* Atur tinggi gambar wayang agar seragam */
+  object-fit: cover;
+  padding: 10px;
+  background-color: #e9e9e9; /* Background terang untuk wayang */
+}
+
+.pandawa-item p {
+  color: #333;
+  font-size: 0.9em;
+  font-weight: 600;
+  padding: 10px 0;
+  margin: 0;
+}
+
+/* ======================================================= */
+/* 10. GAYA GRID TAUTAN (Gambar 1)                         */
+/* ======================================================= */
+
+.secondary-content-grid {
+  padding: 0 50px 80px 50px; /* Jarak dari bawah yang bersih */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ======================================================= */
+/* 11. GAYA GRID AKSESORIS (GAMBAR REFERENSI)              */
+/* ======================================================= */
+
+.aksesoris-section {
+  padding: 40px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aksesoris-grid {
+  display: grid;
+  /* Memaksa grid menjadi 3 kolom yang sama lebar */
+  grid-template-columns: repeat(3, 1fr); 
+  /* Menyamakan jarak antar kartu dengan bagian atasnya */
+  gap: 20px; 
+}
+
+.aksesoris-card {
+  display: block;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.aksesoris-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.aksesoris-card img {
+  width: 100%;
+  height: 200px; /* Tinggi gambar dibuat seragam */
+  object-fit: cover; /* Memastikan gambar pas tanpa distorsi */
+  display: block;
+}
+
+.aksesoris-info {
+  padding: 15px;
+  text-align: left; /* Tambahkan baris ini */
+}
+
+.aksesoris-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.kategori-aksesoris {
+  font-size: 0.7em;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 1px;
+}
+
+.share-icon {
+  font-size: 1.2em;
+  color: #6b7280;
+}
+
+.deskripsi-aksesoris {
+  font-size: 0.95em;
+  color: #1f2937;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ======================================================= */
+/* 12. GAYA BANNER WARNA (COLOR HERO SECTION)              */
+/* ======================================================= */
+
+.color-banner-hero {
+  /* Membuat section lebar penuh */
+  width: 100%; 
+  height: 350px; /* Atur tinggi sesuai keinginan */
+  margin: 40px 0; /* Beri jarak dari konten atas dan bawah */
+  position: relative;
+  overflow: hidden;
+  
+  /* Background Image dengan Overlay Gelap */
+  background-image: url('image/beranda/color_hero_bg.jpg'); /* Ganti dengan URL gambar 2 Anda */
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.4); /* Overlay gelap */
+  background-blend-mode: overlay;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-content {
+  color: white;
+  z-index: 10;
+  padding: 20px;
+}
+
+.banner-content h2 {
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.banner-content p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.banner-button {
+  display: inline-block;
+  padding: 10px 20px;
+  
+  /* Tombol Transparan dengan Border Putih (mirip explore-btn) */
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.banner-button:hover {
+  background-color: white;
+  color: #1f2937; /* Teks gelap saat hover */
+}

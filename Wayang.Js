@@ -44,8 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // --- Event Listener untuk Smooth Scroll ---
-    // Pastikan elemen <a href="#fakta-1"> di fakta.html tidak lagi memiliki onclick
     const scrollIcon = document.querySelector('.scroll-down-icon');
     if (scrollIcon) {
         scrollIcon.addEventListener('click', (event) => {
@@ -54,9 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const aksesorisCards = document.querySelectorAll('.aksesoris-card');
+    aksesorisCards.forEach(card => {
+        card.addEventListener('click', (event) => {
+            const href = card.getAttribute('href');
+            if (href === '#null' || href === '#') {
+                event.preventDefault(); 
+            }
+        });
+    });
 
-    // --- 4. LOGIKA GALERI DAN MODAL (Hanya berlaku di halaman tokoh) ---
-
+    // --- 5. LOGIKA GALERI DAN MODAL (Hanya berlaku di halaman tokoh) ---
     // --- DOM Elements ---
     const wayangGridContainer = document.getElementById('wayang-grid-container');
     const searchInput = document.getElementById('search-input');
@@ -80,16 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Fungsi untuk Merender Galeri
         function renderGallery(data) {
             if (wayangGridContainer) wayangGridContainer.innerHTML = '';
-            
             data.forEach((wayang) => {
                 const nama = wayang.Nama; 
                 const gambarPath = wayang.Gambar;
-                
                 if (gambarPath && nama) { 
                     const card = document.createElement('div');
                     card.classList.add('wayang-item');
                     card.dataset.nama = nama; 
-
                     card.innerHTML = `<img src="${gambarPath}" alt="Tokoh Wayang ${nama}">`;
                     if (wayangGridContainer) wayangGridContainer.appendChild(card);
                 }
