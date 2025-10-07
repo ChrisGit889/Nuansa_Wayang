@@ -665,3 +665,64 @@ main#fakta-container {
 #fakta-8 {
   background-image: url('image/fakta/dalang.jpg'); 
 }
+
+/* 8. TOMBOL KEMBALI KE BERANDA (PERLENGKAPAN) */
+.back-to-home {
+  position: fixed;
+  top: 25px;
+  left: 30px;
+  z-index: 10000;
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: rgba(255, 255, 255, 0.2); 
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 6px;
+  font-size: 0.95em;
+  font-weight: 500;
+  backdrop-filter: blur(5px); 
+  transition: background-color 0.3s;
+}
+
+.back-to-home:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: #fad643;
+  color: #fad643;
+}
+
+.hero-fakta {
+  background-image: url('image/fakta/Kayon.jpg'); 
+}
+
+#fakta-1 {
+  background-image: url('image/perlengkapan/kelir.jpg'); 
+}
+
+#fakta-2 {
+  background-image: url('image/perlengkapan/Bléncong.jpeg'); 
+}
+
+#fakta-3 {
+  background-image: url('image/perlengkapan/Debog.jpg'); 
+}
+
+#fakta-4 {
+  background-image: url('image/perlengkapan/Cempala.jpg'); 
+}
+
+#fakta-5 {
+  background-image: url('image/perlengkapan/Kotak.jpg'); 
+}
+
+#fakta-6 {
+  background-image: url('image/perlengkapan/Gamelan.jpg'); 
+}
+
+#fakta-7 {
+  background-image: url('image/perlengkapan/Kepyak.jpg'); 
+}
+
+#fakta-8 {
+  background-image: url('image/perlengkapan/Letak.jpg'); 
+}

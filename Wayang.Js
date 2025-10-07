@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     // 1. Muat Navbar
     fetch('navbar.html')
         .then(response => response.text())
@@ -6,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const navContainer = document.getElementById('navbar-container');
             if (navContainer) {
                 navContainer.innerHTML = data;
-                highlightActivePage(); // Panggil fungsi highlight
+                highlightActivePage();
             }
         })
         .catch(error => console.error('Gagal memuat navbar:', error));
@@ -16,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const path = window.location.pathname;
         let currentPage = path.substring(path.lastIndexOf('/') + 1).replace('.html', '');
         
-        // Kasus spesial jika pathnya adalah root atau index (misalnya 'beranda.html')
         if (!currentPage || currentPage === 'index') {
             currentPage = 'beranda';
         }
@@ -28,13 +28,34 @@ document.addEventListener('DOMContentLoaded', () => {
             if (linkPage === currentPage) {
                 link.classList.add('active');
             } else {
-                link.classList.remove('active'); // Hapus jika tidak aktif
+                link.classList.remove('active');
             }
         });
     }
 
-   
-});
+    // 3. FUNGSI SMOOTH SCROLL (Untuk halaman fakta.html)
+    function scrollToFakta(targetId) {
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth' 
+            });
+        }
+    }
+    
+    // --- Event Listener untuk Smooth Scroll ---
+    // Pastikan elemen <a href="#fakta-1"> di fakta.html tidak lagi memiliki onclick
+    const scrollIcon = document.querySelector('.scroll-down-icon');
+    if (scrollIcon) {
+        scrollIcon.addEventListener('click', (event) => {
+            event.preventDefault(); // Mencegah lompatan default HTML
+            scrollToFakta('fakta-1'); 
+        });
+    }
+
+
+    // --- 4. LOGIKA GALERI DAN MODAL (Hanya berlaku di halaman tokoh) ---
 
     // --- DOM Elements ---
     const wayangGridContainer = document.getElementById('wayang-grid-container');
@@ -43,128 +64,138 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Elemen Modal
     const modal = document.getElementById('wayang-modal');
-    const closeButton = modal.querySelector('.close-button');
-    const modalNama = document.getElementById('modal-wayang-nama');
-    const modalGambar = document.getElementById('modal-wayang-gambar');
-    
-    // Tempat mengisi detail wayang
-    const modalAsal = document.getElementById('modal-wayang-asal');
-    const modalPembuat = document.getElementById('modal-wayang-pembuat');
-    const modalTanggal = document.getElementById('modal-wayang-tanggal');
-    const modalMedium = document.getElementById('modal-wayang-medium');
-    const modalPenjelasan = document.getElementById('modal-wayang-penjelasan');
-    
-    // Fungsi untuk Merender Galeri
-    function renderGallery(data) {
-        wayangGridContainer.innerHTML = '';
+    // Cek keberadaan modal untuk menghindari error di halaman lain
+    if (modal) {
+        const closeButton = modal.querySelector('.close-button');
+        const modalNama = document.getElementById('modal-wayang-nama');
+        const modalGambar = document.getElementById('modal-wayang-gambar');
         
-        data.forEach((wayang) => {
-            const nama = wayang.Nama; 
-            const gambarPath = wayang.Gambar;
-            
-            if (gambarPath && nama) { 
-                const card = document.createElement('div');
-                card.classList.add('wayang-item');
-                card.dataset.nama = nama; 
+        // Tempat mengisi detail wayang
+        const modalAsal = document.getElementById('modal-wayang-asal');
+        const modalPembuat = document.getElementById('modal-wayang-pembuat');
+        const modalTanggal = document.getElementById('modal-wayang-tanggal');
+        const modalMedium = document.getElementById('modal-wayang-medium');
+        const modalPenjelasan = document.getElementById('modal-wayang-penjelasan');
 
-                card.innerHTML = `<img src="${gambarPath}" alt="Tokoh Wayang ${nama}">`;
-                wayangGridContainer.appendChild(card);
-            }
-        });
-        attachModalListeners(); 
-    }
-    
-    // 2. Fungsi untuk Menampilkan Modal dengan Data dari data.js
-    function showModal(namaTokoh) {
-        // Cari data wayang berdasarkan Nama
-        const wayang = dataWayang.find(w => w.Nama === namaTokoh);
-
-        if (wayang) {
-            let penjelasanSingkat = wayang.Penjelasan || "Penjelasan tidak tersedia.";
+        // Fungsi untuk Merender Galeri
+        function renderGallery(data) {
+            if (wayangGridContainer) wayangGridContainer.innerHTML = '';
             
-            const firstSentenceMatch = penjelasanSingkat.match(/[^.!?]*[.!?]/);
-            if (firstSentenceMatch) {
-                 penjelasanSingkat = firstSentenceMatch[0].trim();
-            } else if (penjelasanSingkat.length > 120) {
-                 penjelasanSingkat = penjelasanSingkat.substring(0, 120).trim() + "...";
-            }
-            
-            // Mengisi konten Modal
-            modalNama.textContent = wayang.Nama;
-            modalGambar.src = wayang.Gambar;
-            modalGambar.alt = `Gambar ${wayang.Nama}`;
+            data.forEach((wayang) => {
+                const nama = wayang.Nama; 
+                const gambarPath = wayang.Gambar;
+                
+                if (gambarPath && nama) { 
+                    const card = document.createElement('div');
+                    card.classList.add('wayang-item');
+                    card.dataset.nama = nama; 
 
-            modalAsal.textContent = wayang.Asal || 'Tidak Diketahui';
-            modalPembuat.textContent = wayang.Pembuat || 'Tidak Diketahui';
-            modalTanggal.textContent = wayang['Tanggal Dibuat'] || 'Tidak Diketahui';
-            modalMedium.textContent = wayang.Medium || 'Tidak Diketahui';
-            modalPenjelasan.textContent = penjelasanSingkat;
-            
-            modal.style.display = 'block';
-        }
-    }
-    
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-
-    function attachModalListeners() {
-        const wayangItems = document.querySelectorAll('.wayang-item');
-        wayangItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const namaTokoh = item.dataset.nama;
-                showModal(namaTokoh);
+                    card.innerHTML = `<img src="${gambarPath}" alt="Tokoh Wayang ${nama}">`;
+                    if (wayangGridContainer) wayangGridContainer.appendChild(card);
+                }
             });
-        });
-    }
-
-    function applyFiltersAndSort() {
-        let filteredData = [...dataWayang]; 
-        const searchTerm = searchInput.value.toLowerCase();
-        const sortValue = sortSelect.value;
+            attachModalListeners(); 
+        }
         
-        // 1. Filtering (Pencarian)
-        if (searchTerm) {
-            filteredData = filteredData.filter(wayang => {
-                const name = (wayang.Nama || '').toLowerCase();
-                const asal = (wayang.Asal || '').toLowerCase();
-                const pembuat = (wayang.Pembuat || '').toLowerCase();
-                return name.includes(searchTerm) || 
-                       asal.includes(searchTerm) || 
-                       pembuat.includes(searchTerm);
+        // Fungsi untuk Menampilkan Modal
+        function showModal(namaTokoh) {
+            // Cari data wayang berdasarkan Nama
+            const wayang = dataWayang.find(w => w.Nama === namaTokoh);
+
+            if (wayang) {
+                let penjelasanSingkat = wayang.Penjelasan || "Penjelasan tidak tersedia.";
+                
+                // Ambil 1 kalimat pertama (sesuai request Anda) atau potong jika terlalu panjang
+                const firstSentenceMatch = penjelasanSingkat.match(/[^.!?]*[.!?]/);
+                if (firstSentenceMatch) {
+                    penjelasanSingkat = firstSentenceMatch[0].trim();
+                } else if (penjelasanSingkat.length > 120) {
+                    penjelasanSingkat = penjelasanSingkat.substring(0, 120).trim() + "...";
+                }
+                
+                // Mengisi konten Modal
+                modalNama.textContent = wayang.Nama;
+                modalGambar.src = wayang.Gambar;
+                modalGambar.alt = `Gambar ${wayang.Nama}`;
+
+                modalAsal.textContent = wayang.Asal || 'Tidak Diketahui';
+                modalPembuat.textContent = wayang.Pembuat || 'Tidak Diketahui';
+                modalTanggal.textContent = wayang['Tanggal Dibuat'] || 'Tidak Diketahui';
+                modalMedium.textContent = wayang.Medium || 'Tidak Diketahui';
+                modalPenjelasan.textContent = penjelasanSingkat;
+                
+                modal.style.display = 'block';
+            }
+        }
+        
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        function attachModalListeners() {
+            const wayangItems = document.querySelectorAll('.wayang-item');
+            wayangItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const namaTokoh = item.dataset.nama;
+                    showModal(namaTokoh);
+                });
             });
         }
 
-        // 2. Sorting (Pengurutan)
-        filteredData.sort((a, b) => {
-            const nameA = (a.Nama || '').toLowerCase();
-            const nameB = (b.Nama || '').toLowerCase();
+        function applyFiltersAndSort() {
+            // Memastikan dataWayang tersedia (diasumsikan dimuat dari data.js)
+            if (typeof dataWayang === 'undefined') return; 
+
+            let filteredData = [...dataWayang]; 
+            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+            const sortValue = sortSelect ? sortSelect.value : '';
             
-            if (sortValue === 'asc') {
-                return nameA.localeCompare(nameB); // A - Z
-            } else if (sortValue === 'desc') {
-                return nameB.localeCompare(nameA); // Z - A
+            // 1. Filtering (Pencarian)
+            if (searchTerm) {
+                filteredData = filteredData.filter(wayang => {
+                    const name = (wayang.Nama || '').toLowerCase();
+                    const asal = (wayang.Asal || '').toLowerCase();
+                    const pembuat = (wayang.Pembuat || '').toLowerCase();
+                    return name.includes(searchTerm) || 
+                           asal.includes(searchTerm) || 
+                           pembuat.includes(searchTerm);
+                });
             }
-            return 0;
+
+            // 2. Sorting (Pengurutan)
+            filteredData.sort((a, b) => {
+                const nameA = (a.Nama || '').toLowerCase();
+                const nameB = (b.Nama || '').toLowerCase();
+                
+                if (sortValue === 'asc') {
+                    return nameA.localeCompare(nameB); // A - Z
+                } else if (sortValue === 'desc') {
+                    return nameB.localeCompare(nameA); // Z - A
+                }
+                return 0;
+            });
+
+            renderGallery(filteredData);
+        }
+        
+        // Event listener untuk Search dan Sort
+        if (searchInput) searchInput.addEventListener('input', applyFiltersAndSort);
+        if (sortSelect) sortSelect.addEventListener('change', applyFiltersAndSort);
+
+        // Menutup modal
+        closeButton.addEventListener('click', closeModal);
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
         });
 
-        renderGallery(filteredData);
+        // Inisialisasi galeri (hanya jika ada container)
+        if (wayangGridContainer) applyFiltersAndSort();
     }
-    
-    // Event listener untuk Search dan Sort
-    if (searchInput) searchInput.addEventListener('input', applyFiltersAndSort);
-    if (sortSelect) sortSelect.addEventListener('change', applyFiltersAndSort);
-
-    // Menutup modal
-    closeButton.addEventListener('click', closeModal);
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            closeModal();
-        }
-    });
-    applyFiltersAndSort();
+});
