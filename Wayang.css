@@ -233,20 +233,15 @@ body {
   position: relative; 
   cursor: pointer;
   overflow: hidden; 
-  
-  background-color: #ffffff; /* Pastikan background putih bersih */
-  border: none; /* Hapus border kaku */
-  border-radius: 12px; /* Sudut membulat modern */
-  
-  /* Bayangan yang lebih halus dan lebih menonjol */
+  background-color: #ffffff;
+  border: none;
+  border-radius: 12px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); 
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .wayang-item:hover {
-  /* Tetap ada efek naik saat hover */
   transform: translateY(-5px); 
-  /* Bayangan sedikit lebih gelap saat hover */
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); 
 }
 
@@ -781,9 +776,7 @@ main#fakta-container {
 }
 
 .lesson-card {
-  /* PENTING: Kembalikan batasan lebar maksimum */
-  max-width: 800px; /* Nilai yang ideal agar terlihat proporsional */
-  
+  max-width: 800px;
   margin: 30px auto;
   padding: 40px 30px; 
   background-color: #1f2937; 
@@ -1100,7 +1093,7 @@ main#fakta-container {
   pointer-events: none;
 }
 
-/* Class untuk jawaban yang salah */
+/*Class untuk jawaban yang salah */
 .quiz-btn.wrong-answer { 
   background-color: #f44336;
   color: white;
@@ -1111,7 +1104,7 @@ main#fakta-container {
   border-color: #1a73e8;
 }
 
-/* Gaya Jawaban Benar & Salah (Seperti di Gambar) */
+/*Gaya Jawaban Benar & Salah*/
 .quiz-btn.correct {
   background-color: #4CAF50;
   color: white;
@@ -1124,7 +1117,6 @@ main#fakta-container {
   border-color: #f44336;
 }
 
-/* --- TOMBOL PELAJARI LEBIH LANJUT --- */
 .quiz-learn-more {
   display: inline-block;
   padding: 12px 25px;
@@ -1152,4 +1144,89 @@ main#fakta-container {
 .quiz-caption {
   font-size: 0.9em;
   color: #6b7280;
+}
+
+/* ======================================================= */
+/* 15. GAYA GALERI VIDEO (DIMUAT DI BERANDA)               */
+/* ======================================================= */
+.video-gallery-section {
+  padding: 80px 50px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.video-gallery-title {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 50px;
+}
+
+.gallery-main-content {
+  padding: 0 80px; 
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
+.video-section {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.banner-style {
+  display: inline-block;
+  padding: 8px 25px;
+  margin-bottom: 30px; 
+  background-color: #A47E1B; 
+  color: white;
+  font-size: 0.9em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-frame-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.video-frame-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ======================================================= */
+/* 16. GAYA BANNER MUSEUM (MIRIP COLOR HERO)               */
+/* ======================================================= */
+.museum-banner-hero {
+  width: 100%; 
+  height: 350px; 
+  margin: 40px 0; 
+  position: relative;
+  overflow: hidden;
+  background-image: url('image/museum/kota.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.4); 
+  background-blend-mode: overlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.museum-banner-hero .banner-content {
+  color: white;
+  z-index: 10;
+  padding: 20px;
 }
