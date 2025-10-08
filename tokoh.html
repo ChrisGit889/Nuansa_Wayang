@@ -10,17 +10,24 @@
 <body>
     <header class="navbar professional-navbar"> 
         <div class="logo">NUANSA WAYANG</div>
-        <nav>
+    
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav id="nav-menu">
             <ul>
-                <li><a href="beranda.html">Beranda</a></li>
-                <li><a href="eksplorasi.html">Eksplorasi</a></li>
-                <li><a href="tokoh.html" class="active">Tokoh</a></li>
-                <li><a href="galeri.html">Galeri</a></li>
-                <li><a href="museum.html">Museum</a></li>
+                <li><a href="beranda.html" data-page="beranda">Beranda</a></li>
+                <li><a href="eksplorasi.html" data-page="eksplorasi">Eksplorasi</a></li>
+                <li><a href="tokoh.html" data-page="tokoh">Tokoh</a></li>
+                <li><a href="galeri.html" data-page="galeri">Galeri</a></li>
+                <li><a href="museum.html" data-page="museum">Museum</a></li>
             </ul>
         </nav>
     </header>
-
+    
     <main class="content-tokoh">
         <section class="hero-tokoh">
             <h1>Temukan lebih dari 50 Tokoh Wayang</h1>
@@ -33,7 +40,7 @@
                     <option value="asc">Nama (A-Z)</option>
                     <option value="desc">Nama (Z-A)</option>
                 </select>
-                <button id="favorites-btn">Wayang Favorite ♡</button>
+                <button id="favorites-btn">♡</button>
             </div>
         </section>
 
