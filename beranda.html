@@ -10,17 +10,24 @@
 <body>
     <header class="navbar professional-navbar"> 
         <div class="logo">NUANSA WAYANG</div>
-        <nav>
+    
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav id="nav-menu">
             <ul>
-                    <li><a href="beranda.html" class="active">Beranda</a></li>
-                    <li><a href="eksplorasi.html">Eksplorasi</a></li>
-                    <li><a href="tokoh.html" >Tokoh</a></li>
-                    <li><a href="galeri.html">Galeri</a></li>
-                    <li><a href="museum.html">Museum</a></li>
+                <li><a href="beranda.html" data-page="beranda">Beranda</a></li>
+                <li><a href="eksplorasi.html" data-page="eksplorasi">Eksplorasi</a></li>
+                <li><a href="tokoh.html" data-page="tokoh">Tokoh</a></li>
+                <li><a href="galeri.html" data-page="galeri">Galeri</a></li>
+                <li><a href="museum.html" data-page="museum">Museum</a></li>
             </ul>
         </nav>
     </header>
-
+    
     <section class="hero">
         <div class="hero-content">
             <h1>Nuansa Wayang</h1>
@@ -77,7 +84,7 @@
                 <div class="banner-content">
                     <h2>Mengagumi Detail Busana Wayang</h2>
                     <p>Dari Mahkota Emas hingga Ukiran Telinga yang Penuh Makna</p>
-                    <a href="#" class="banner-button">Telusuri Koleksi Aksesori</a>
+                    <a href="eksplorasi.html" class="banner-button">Telusuri Koleksi Aksesori</a>
                 </div>
             </section>
             

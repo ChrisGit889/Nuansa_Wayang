@@ -1,28 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuansa Wayang</title>
-    <link rel="stylesheet" href="wayang.css">
-    <script src="Wayang.js"></script> 
+    <title>Eksplorasi Aksesoris | NUANSA WAYANG</title>
+    <link rel="stylesheet" href="Wayang.css">
 </head>
-
 <body>
+
     <header class="navbar professional-navbar"> 
         <div class="logo">NUANSA WAYANG</div>
-        <nav>
+    
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    
+        <nav id="nav-menu">
             <ul>
-                <li><a href="beranda.html">Beranda</a></li>
-                <li><a href="eksplorasi.html" class="active">Eksplorasi</a></li>
-                <li><a href="tokoh.html" >Tokoh</a></li>
-                <li><a href="galeri.html">Galeri</a></li>
-                <li><a href="museum.html">Museum</a></li>
+                <li><a href="beranda.html" data-page="beranda">Beranda</a></li>
+                <li><a href="eksplorasi.html" data-page="eksplorasi">Eksplorasi</a></li>
+                <li><a href="tokoh.html" data-page="tokoh">Tokoh</a></li>
+                <li><a href="galeri.html" data-page="galeri">Galeri</a></li>
+                <li><a href="museum.html" data-page="museum">Museum</a></li>
             </ul>
         </nav>
     </header>
 
-</body>
+    <main class="eksplorasi-page">
+        <section class="eksplorasi-header">
+            <h1>Aksesoris Wayang</h1>
+            <p>Bagaimana Wayang berdandan untuk membuat kalian terkesan.</p>
+        </section>
 
+        <section class="eksplorasi-grid-container">
+            <div class="eksplorasi-grid">
+
+                <a href="#" class="eksplorasi-card">
+                    <img src="image/aksesoris/mahkota.png" alt="Mahkota Wayang">
+                    <div class="eksplorasi-card-info">
+                        <span class="eksplorasi-card-category">Aksesoris Kepala</span>
+                        <h4 class="eksplorasi-card-title">Mahkota Berwarna-warni</h4>
+                    </div>
+                </a>
+
+                <a href="#" class="eksplorasi-card">
+                    <img src="image/aksesoris/kain.png" alt="Pakaian Wayang">
+                    <div class="eksplorasi-card-info">
+                        <span class="eksplorasi-card-category">Pakaian</span>
+                        <h4 class="eksplorasi-card-title">Kombinasi Sarung yang berwarna-warni</h4>
+                    </div>
+                </a>
+
+                <a href="#" class="eksplorasi-card">
+                    <img src="image/aksesoris/gelang.png" alt="Gelang Tangan Wayang">
+                    <div class="eksplorasi-card-info">
+                        <span class="eksplorasi-card-category">Aksesoris Tangan</span>
+                        <h4 class="eksplorasi-card-title">Gelang Tangan Yang Berani</h4>
+                    </div>
+                </a>
+
+                <a href="#" class="eksplorasi-card">
+                    <img src="image/aksesoris/kuku.png" alt="Kuku Wayang">
+                    <div class="eksplorasi-card-info">
+                        <span class="eksplorasi-card-category">Galeri Online</span>
+                        <h4 class="eksplorasi-card-title">Kuku Mewah dan gelang</h4>
+                    </div>
+                </a>
+
+                <a href="#" class="eksplorasi-card">
+                    <img src="image/aksesoris/gelang.png" alt="Gelang Kaki Wayang"> <div class="eksplorasi-card-info">
+                        <span class="eksplorasi-card-category">Aksesoris Kaki</span>
+                        <h4 class="eksplorasi-card-title">Gelang Kaki Istimewa</h4>
+                    </div>
+                </a>
+
+                <a href="#" class="eksplorasi-card">
+                    <img src="image/aksesoris/kepala.png" alt="Penutup Kepala Wayang">
+                    <div class="eksplorasi-card-info">
+                        <span class="eksplorasi-card-category">Penutup Kepala</span>
+                        <h4 class="eksplorasi-card-title">Aksesoris Kepala yang Menarik</h4>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="Wayang.js"></script>
+</body>
 </html>
