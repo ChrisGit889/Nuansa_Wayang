@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Buat Navbar
+    // 1. Buat Navbar (Tidak diubah)
     fetch('navbar.html')
         .then(response => response.text())
         .then(data => {
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Gagal memuat navbar:', error));
 
-    // 2. Fungsi untuk Highlight Halaman Aktif
+    // 2. Fungsi untuk Highlight Halaman Aktif (Tidak diubah)
     function highlightActivePage() {
         const path = window.location.pathname;
         let currentPage = path.substring(path.lastIndexOf('/') + 1).replace('.html', '');
@@ -32,14 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. FUNGSI SMOOTH SCROLL (Untuk halaman fakta.html)
+    // 3. FUNGSI SMOOTH SCROLL (Tidak diubah)
     function scrollToFakta(targetId) {
         const targetElement = document.getElementById(targetId);
-        
         if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth' 
-            });
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     }
     
@@ -51,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 4. LOGIKA LAIN (Tidak diubah)
     const aksesorisCards = document.querySelectorAll('.aksesoris-card');
     aksesorisCards.forEach(card => {
         card.addEventListener('click', (event) => {
@@ -61,192 +59,170 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 5. LOGIKA GALERI DAN MODAL (Hanya berlaku di halaman tokoh) ---
-    // --- DOM Elements ---
+    // =========================================================================
+    // 5. AWAL DARI KODE GALERI, MODAL, DAN FITUR FAVORIT
+    // =========================================================================
     const wayangGridContainer = document.getElementById('wayang-grid-container');
+    // Cek jika kita berada di halaman 'tokoh.html', jika tidak, hentikan eksekusi kode galeri
+    if (!wayangGridContainer) {
+        return;
+    }
+
+    // --- DOM Elements ---
     const searchInput = document.getElementById('search-input');
     const sortSelect = document.getElementById('sort-select');
     const modal = document.getElementById('wayang-modal');
-    // Cek keberadaan modal untuk menghindari error di halaman lain
-    if (modal) {
-        const closeButton = modal.querySelector('.close-button');
-        const modalNama = document.getElementById('modal-wayang-nama');
-        const modalGambar = document.getElementById('modal-wayang-gambar');
-        
-        // Tempat mengisi detail wayang
-        const modalAsal = document.getElementById('modal-wayang-asal');
-        const modalPembuat = document.getElementById('modal-wayang-pembuat');
-        const modalTanggal = document.getElementById('modal-wayang-tanggal');
-        const modalMedium = document.getElementById('modal-wayang-medium');
-        const modalPenjelasan = document.getElementById('modal-wayang-penjelasan');
+    const favoritesBtn = document.getElementById('favorites-btn');
 
-        // Fungsi untuk Merender Galeri
-        function renderGallery(data) {
-            if (wayangGridContainer) wayangGridContainer.innerHTML = '';
+    // Langkah 1: Tambahkan ID unik ke setiap objek wayang
+    const dataWayangWithId = dataWayang.map((wayang, index) => ({
+        ...wayang,
+        id: index
+    }));
+
+    // --- Variabel State untuk Fitur Favorit ---
+    let favorites = JSON.parse(localStorage.getItem('wayangFavorites')) || [];
+    let showingFavorites = false;
+
+    // Fungsi untuk menyimpan favorit ke localStorage
+    const saveFavorites = () => {
+        localStorage.setItem('wayangFavorites', JSON.stringify(favorites));
+    };
+
+    // Fungsi untuk menampilkan kartu wayang ke galeri
+    function renderGallery(data) {
+        wayangGridContainer.innerHTML = '';
+        
+        data.forEach((wayang, index) => { 
+            const isLoved = favorites.includes(wayang.id); // Cek status favorit berdasarkan ID
             
-            data.forEach((wayang, index) => { 
-                const nama = wayang.Nama; 
-                const gambarPath = wayang.Gambar;
-                
-                if (gambarPath && nama) { 
-                    const card = document.createElement('div');
-                    card.classList.add('wayang-item');
-                    card.dataset.nama = nama; 
-                    card.innerHTML = `
-                        <img src="${gambarPath}" alt="Tokoh Wayang ${nama}">
-                        <div class="wayang-overlay">
-                            <p class="wayang-nama">${nama}</p>
-                        </div>
-                    `;
-                    
-                    if (wayangGridContainer) {
-                        wayangGridContainer.appendChild(card);
-                        setTimeout(() => {
-                            card.classList.add('animated');
-                        }, index * 50); 
-                    }
-                }
-            });
-            attachModalListeners(); 
-        }
-        
-        function showModal(namaTokoh) {
-            // Cari data wayang berdasarkan Nama
-            const wayang = dataWayang.find(w => w.Nama === namaTokoh);
+            const card = document.createElement('div');
+            card.classList.add('wayang-item');
+            card.dataset.id = wayang.id; // Gunakan ID sebagai penanda di elemen
 
-            if (wayang) {
-                let penjelasanSingkat = wayang.Penjelasan || "Penjelasan tidak tersedia.";
-                
-                // Ambil 1 kalimat pertama (sesuai request User) atau potong jika terlalu panjang
-                const firstSentenceMatch = penjelasanSingkat.match(/[^.!?]*[.!?]/);
-                if (firstSentenceMatch) {
-                    penjelasanSingkat = firstSentenceMatch[0].trim();
-                } else if (penjelasanSingkat.length > 120) {
-                    penjelasanSingkat = penjelasanSingkat.substring(0, 120).trim() + "...";
-                }
-                
-                // Mengisi konten Modal
-                modalNama.textContent = wayang.Nama;
-                modalGambar.src = wayang.Gambar;
-                modalGambar.alt = `Gambar ${wayang.Nama}`;
-
-                modalAsal.textContent = wayang.Asal || 'Tidak Diketahui';
-                modalPembuat.textContent = wayang.Pembuat || 'Tidak Diketahui';
-                modalTanggal.textContent = wayang['Tanggal Dibuat'] || 'Tidak Diketahui';
-                modalMedium.textContent = wayang.Medium || 'Tidak Diketahui';
-                modalPenjelasan.textContent = penjelasanSingkat;
-                
-                modal.style.display = 'block';
-            }
-        }
-        
-        function closeModal() {
-            modal.style.display = 'none';
-        }
-
-        function attachModalListeners() {
-            const wayangItems = document.querySelectorAll('.wayang-item');
-            wayangItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const namaTokoh = item.dataset.nama;
-                    showModal(namaTokoh);
-                });
-            });
-        }
-
-        function applyFiltersAndSort() {
-            // Memastikan dataWayang tersedia
-            if (typeof dataWayang === 'undefined') return; 
-            let filteredData = [...dataWayang]; 
-            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
-            const sortValue = sortSelect ? sortSelect.value : '';
+            card.innerHTML = `
+                <span class="love-btn ${isLoved ? 'loved' : ''}" data-id="${wayang.id}">♥</span>
+                <img src="${wayang.Gambar}" alt="Tokoh Wayang ${wayang.Nama}">
+                <div class="wayang-overlay">
+                    <p class="wayang-nama">${wayang.Nama}</p>
+                </div>
+            `;
             
-            // 1. Filtering (Pencarian)
-            if (searchTerm) {
-                filteredData = filteredData.filter(wayang => {
-                    const name = (wayang.Nama || '').toLowerCase();
-                    const asal = (wayang.Asal || '').toLowerCase();
-                    const pembuat = (wayang.Pembuat || '').toLowerCase();
-                    return name.includes(searchTerm) || 
-                           asal.includes(searchTerm) || 
-                           pembuat.includes(searchTerm);
-                });
+            wayangGridContainer.appendChild(card);
+            // Animasi tetap dipertahankan
+            setTimeout(() => {
+                card.classList.add('animated');
+            }, index * 50);
+        });
+    }
+    
+    // Fungsi untuk menampilkan detail wayang di modal (diperbarui untuk menggunakan ID)
+    function showModal(wayangId) {
+        const wayang = dataWayangWithId.find(w => w.id === wayangId);
+        if (wayang) {
+            // Logika pemotongan penjelasan Anda tetap dipertahankan
+            let penjelasanSingkat = wayang.Penjelasan || "Penjelasan tidak tersedia.";
+            const firstSentenceMatch = penjelasanSingkat.match(/[^.!?]*[.!?]/);
+            if (firstSentenceMatch) {
+                penjelasanSingkat = firstSentenceMatch[0].trim();
+            } else if (penjelasanSingkat.length > 120) {
+                penjelasanSingkat = penjelasanSingkat.substring(0, 120).trim() + "...";
             }
-
-            // 2. Sorting (Pengurutan)
-            filteredData.sort((a, b) => {
-                const nameA = (a.Nama || '').toLowerCase();
-                const nameB = (b.Nama || '').toLowerCase();
-                
-                if (sortValue === 'asc') {
-                    return nameA.localeCompare(nameB); // A - Z
-                } else if (sortValue === 'desc') {
-                    return nameB.localeCompare(nameA); // Z - A
-                }
-                return 0;
-            });
-
-            renderGallery(filteredData);
+            
+            document.getElementById('modal-wayang-nama').textContent = wayang.Nama;
+            document.getElementById('modal-wayang-gambar').src = wayang.Gambar;
+            document.getElementById('modal-wayang-asal').textContent = wayang.Asal || 'Tidak Diketahui';
+            document.getElementById('modal-wayang-pembuat').textContent = wayang.Pembuat || 'Tidak Diketahui';
+            document.getElementById('modal-wayang-tanggal').textContent = wayang['Tanggal Dibuat'] || 'Tidak Diketahui';
+            document.getElementById('modal-wayang-medium').textContent = wayang.Medium || 'Tidak Diketahui';
+            document.getElementById('modal-wayang-penjelasan').textContent = penjelasanSingkat;
+            modal.style.display = 'block';
         }
-        
-        // Event listener untuk Search dan Sort
-        if (searchInput) searchInput.addEventListener('input', applyFiltersAndSort);
-        if (sortSelect) sortSelect.addEventListener('change', applyFiltersAndSort);
-
-        // Menutup modal
-        closeButton.addEventListener('click', closeModal);
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Inisialisasi galeri (hanya jika ada container)
-        if (wayangGridContainer) applyFiltersAndSort();
+    }
+    
+    function closeModal() {
+        modal.style.display = 'none';
     }
 
-    // 6. LOGIKA KUIS INTERAKTIF
-const quizOptions = document.getElementById('quiz-options');
-const learnMoreBtn = document.getElementById('learn-more-btn');
-const quizButtons = document.querySelectorAll('#quiz-options .quiz-btn');
+    // Fungsi utama untuk filter, sort, dan favorit (diperbarui)
+    function applyFiltersAndSort() {
+        let filteredData = [...dataWayangWithId]; 
+        const searchTerm = searchInput.value.toLowerCase();
+        const sortValue = sortSelect.value;
+        
+        // Tahap 1: Filter berdasarkan favorit (jika aktif)
+        if (showingFavorites) {
+            filteredData = filteredData.filter(wayang => favorites.includes(wayang.id));
+        }
+    
+        // Tahap 2: Filter berdasarkan pencarian (logika pencarian Anda dipertahankan)
+        if (searchTerm) {
+            filteredData = filteredData.filter(wayang => {
+                const name = (wayang.Nama || '').toLowerCase();
+                const asal = (wayang.Asal || '').toLowerCase();
+                const pembuat = (wayang.Pembuat || '').toLowerCase();
+                return name.includes(searchTerm) || asal.includes(searchTerm) || pembuat.includes(searchTerm);
+            });
+        }
+    
+        // Tahap 3: Urutkan data
+        if (sortValue === 'asc') {
+            filteredData.sort((a, b) => (a.Nama || '').localeCompare(b.Nama || '')); 
+        } else if (sortValue === 'desc') {
+            filteredData.sort((a, b) => (b.Nama || '').localeCompare(a.Nama || '')); 
+        }
+    
+        renderGallery(filteredData);
+    }
 
-if (quizOptions) {
-    quizOptions.addEventListener('click', (event) => {
-        const clickedButton = event.target;
+    // --- EVENT LISTENERS (Disederhanakan dan Diperbaiki) ---
+    searchInput.addEventListener('input', applyFiltersAndSort);
+    sortSelect.addEventListener('change', applyFiltersAndSort);
 
-        if (clickedButton.classList.contains('quiz-btn')) {
-            const isCorrect = clickedButton.getAttribute('data-answer') === 'correct';
-            
-            // Nonaktifkan semua tombol setelah jawaban diberikan
-            quizButtons.forEach(btn => btn.classList.add('wrong-answer'));
+    // Event listener untuk tombol "Wayang Favorite"
+    favoritesBtn.addEventListener('click', () => {
+        showingFavorites = !showingFavorites;
+        if (showingFavorites) {
+            favoritesBtn.classList.add('active');
+            favoritesBtn.innerHTML = 'Tampilkan Semua';
+        } else {
+            favoritesBtn.classList.remove('active');
+            favoritesBtn.innerHTML = 'Wayang Favorite ♡';
+        }
+        applyFiltersAndSort();
+    });
 
-            if (isCorrect) {
-                // Jawaban Benar
-                clickedButton.classList.remove('wrong-answer');
-                clickedButton.classList.add('correct-answer');  // Tampilkan hijau
-                
-                // Sembunyikan tombol Pelajari Lebih Lanjut (Karena sudah benar)
-                learnMoreBtn.style.display = 'none';
+    // Listener utama yang digabung untuk efisiensi (menangani klik hati & buka modal)
+    wayangGridContainer.addEventListener('click', (e) => {
+        const card = e.target.closest('.wayang-item');
+        if (!card) return;
 
+        const wayangId = parseInt(card.dataset.id, 10);
+
+        // Jika tombol hati yang diklik
+        if (e.target.classList.contains('love-btn')) {
+            const index = favorites.indexOf(wayangId);
+            if (index > -1) {
+                favorites.splice(index, 1);
+                e.target.classList.remove('loved');
             } else {
-                // Jawaban Salah
-                clickedButton.classList.add('wrong-answer');
-                // Cari jawaban yang benar dan tandai dengan hijau
-                const correctAnswerBtn = document.querySelector('.quiz-btn[data-answer="correct"]');
-                if (correctAnswerBtn) {
-                    correctAnswerBtn.classList.remove('wrong-answer');
-                    correctAnswerBtn.classList.add('correct-answer');
-                }
-                learnMoreBtn.style.display = 'inline-block';
+                favorites.push(wayangId);
+                e.target.classList.add('loved');
             }
-            // Nonaktifkan semua tombol agar tidak bisa diklik lagi
-            quizButtons.forEach(btn => btn.style.pointerEvents = 'none');
+            saveFavorites();
+
+            if (showingFavorites) {
+                applyFiltersAndSort();
+            }
+        } 
+        // Jika gambar yang diklik
+        else if (e.target.tagName === 'IMG') {
+            showModal(wayangId);
         }
     });
+    modal.querySelector('.close-button').addEventListener('click', closeModal);
+    window.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModal(); });
+    applyFiltersAndSort();
 }
-});
+);
