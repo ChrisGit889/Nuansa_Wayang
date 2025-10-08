@@ -204,11 +204,11 @@ body {
 
 .filter-controls input, 
 .filter-controls select {
-  padding: 12px 15px; 
-  border: 1px solid #e5e7eb; 
+  padding: 12px 18px; 
+  border: 1px solid #e5e7eb;
   border-radius: 8px; 
   background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: border-color 0.3s;
   width: 300px;
   font-size: 1em;
@@ -230,18 +230,24 @@ body {
 }
 
 .wayang-item {
-  background-color: #ffffff;
-  border: none; 
-  border-radius: 12px; 
+  position: relative; 
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  overflow: hidden; 
+  
+  background-color: #ffffff; /* Pastikan background putih bersih */
+  border: none; /* Hapus border kaku */
+  border-radius: 12px; /* Sudut membulat modern */
+  
+  /* Bayangan yang lebih halus dan lebih menonjol */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); 
   transition: transform 0.3s, box-shadow 0.3s;
-  overflow: hidden;
 }
 
 .wayang-item:hover {
-  transform: translateY(-8px); 
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
+  /* Tetap ada efek naik saat hover */
+  transform: translateY(-5px); 
+  /* Bayangan sedikit lebih gelap saat hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); 
 }
 
 .wayang-item img {
@@ -775,10 +781,12 @@ main#fakta-container {
 }
 
 .lesson-card {
-  max-width: 750px;
+  /* PENTING: Kembalikan batasan lebar maksimum */
+  max-width: 800px; /* Nilai yang ideal agar terlihat proporsional */
+  
   margin: 30px auto;
-  padding: 40px 30px;
-  background-color: #1f2937;
+  padding: 40px 30px; 
+  background-color: #1f2937; 
   color: white;
   border-radius: 12px;
   text-align: center;
@@ -794,7 +802,8 @@ main#fakta-container {
 }
 
 .lesson-button {
-  display: inline-block;
+  display: inline-block; 
+  width: auto;
   padding: 10px 25px; 
   background-color: white;
   color: #1f2937;
@@ -810,7 +819,7 @@ main#fakta-container {
 }
 
 .pandawa-section {
-  padding: 20px 50px 80px 50px; 
+  padding: 20px 50px 10px 50px; 
   text-align: center;
   background-color: #f4f7f9;
 }
@@ -977,7 +986,7 @@ main#fakta-container {
 .banner-content h2 {
   font-size: 2.2em;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 5px; 
 }
 
 .banner-content p {
@@ -1001,4 +1010,146 @@ main#fakta-container {
 .banner-button:hover {
   background-color: white;
   color: #1f2937;
+}
+
+/* ======================================================= */
+/* 13. ANIMASI KARTU WAYANG SAAT DIMUAT (HALAMAN TOKOH)    */
+/* ======================================================= */
+
+@keyframes card-fade-in {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.wayang-item.animated {
+  opacity: 0;
+  animation: card-fade-in 0.5s ease-out forwards;
+}
+
+/* ======================================================= */
+/* 14. GAYA KUIS INTERAKTIF (HALAMAN BERANDA)              */
+/* ======================================================= */
+.quiz-section {
+  padding: 10px 10px 30px 10px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.quiz-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* --- KOLOM KIRI (Teks dan Pilihan) --- */
+.quiz-text-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.quiz-question {
+  font-size: 3em;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.quiz-hint {
+  font-size: 1.1em;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+/* --- GAYA TOMBOL PILIHAN --- */
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.quiz-btn {
+  padding: 12px 15px;
+  font-size: 0.95em;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  pointer-events: auto;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  text-align: left;
+}
+ 
+/* Class untuk jawaban yang benar */
+.quiz-btn.correct-answer {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+  pointer-events: none;
+}
+
+/* Class untuk jawaban yang salah */
+.quiz-btn.wrong-answer { 
+  background-color: #f44336;
+  color: white;
+  border-color: #f44336;
+  pointer-events: none;
+}
+.quiz-btn:hover {
+  border-color: #1a73e8;
+}
+
+/* Gaya Jawaban Benar & Salah (Seperti di Gambar) */
+.quiz-btn.correct {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.quiz-btn.wrong {
+  background-color: #f44336;
+  color: white;
+  border-color: #f44336;
+}
+
+/* --- TOMBOL PELAJARI LEBIH LANJUT --- */
+.quiz-learn-more {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #1a73e8;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  display: none;
+}
+
+/* --- KOLOM KANAN (Peta) --- */
+.quiz-map-content {
+  flex: 2;
+}
+
+.quiz-map-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-caption {
+  font-size: 0.9em;
+  color: #6b7280;
 }

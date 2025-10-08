@@ -135,6 +135,15 @@ const dataWayang = [
     "Gambar": "image/wayang/Patih_Sangkuni.png",
   },
   {
+    "Nama": "Punto Dewo",
+    "Asal": "Tidak Diketahui",
+    "Pembuat": "Sukarman",
+    "Tanggal Dibuat": "1986/1989",
+    "Medium": "Kulit kerbau, Cat air dicampur dengan perekat",
+    "Penjelasan": "Punto Dewo adalah raja raksasa dari Kerajaan Alengka yang memiliki satu mata di dahinya, saudara Prabu Rahwana, yang dikenal sangat perkasa dan akhirnya gugur di tangan Bima dalam Perang Baratayudha.",
+    "Gambar": "image/wayang/Punto_Dewo.png",
+  },
+  {
     "Nama": "Semar Lurah",
     "Asal": "Jawa",
     "Pembuat": "Saderi",

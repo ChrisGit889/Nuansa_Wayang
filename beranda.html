@@ -150,46 +150,93 @@
                     <h3 class="area-subtitle">Apakah Kamu Tahu Wayang Di Indonesia Ada Berapa?</h3>
                     <p class="area-description">Rencana pelajaran yang dapat diunduh untuk digunakan di kelas atau diberikan kepada siswa untuk dikerjakan sesuai kecepatan mereka sendiri</p>
                     
-                    <div class="lesson-card">
+                    <div class="lesson-card"> 
                         <h4>Ragam Warisan Budaya: Mengulik Puluhan Jenis Wayang Nusantara</h4>
-                        <a href="#" class="lesson-button">Rencana pelajaran</a>
+                        
+                        <a href="tokoh.html" class="lesson-button">Telusuri Ragam Wayang</a>
+                        
                     </div>
                 </div>
             </section>
             
+            <div id="wayang-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2 id="modal-wayang-nama" class="modal-title">Nama Wayang</h2>
+                    
+                    <div class="modal-body-content">
+                        <div class="modal-image-container">
+                            <img id="modal-wayang-gambar" src="" alt="Gambar Wayang">
+                        </div>
+                        
+                        <div class="modal-text-detail">
+                            <div class="detail-group">
+                                <p><strong>Asal:</strong> <span id="modal-wayang-asal"></span></p>
+                                <p><strong>Pembuat:</strong> <span id="modal-wayang-pembuat"></span></p>
+                                <p><strong>Tanggal Dibuat:</strong> <span id="modal-wayang-tanggal"></span></p>
+                                <p><strong>Medium:</strong> <span id="modal-wayang-medium"></span></p>
+                            </div>
+                            
+                            <hr class="detail-divider">
+                            
+                            <p class="penjelasan-label"><strong>Penjelasan:</strong></p>
+                            <p class="penjelasan-text" id="modal-wayang-penjelasan"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <section class="pandawa-section">
                 <div class="content-intro">
                     <h2>Bertemu Tokoh Terkenal Wayang Indonesia</h2>
                 </div>
                 
                 <div class="pandawa-grid">
-                    <a href="tokoh.html#yudistira" class="pandawa-item">
-                        <img src="image/wayang/Punto_Demo.png" alt="Punto Dewo">
-                        <p>Punto Dewo</p>
-                    </a>
-                    <a href="tokoh.html#bima" class="pandawa-item">
-                        <img src="image/wayang/Bima_Sena.png" alt="Bima Sena">
-                        <p>Bima Sena</p>
-                    </a>
-                    <a href="tokoh.html#arjuna" class="pandawa-item">
-                        <img src="image/wayang/Raden_Arjuna.png" alt="Raden Arjuna">
-                        <p>Raden Arjuna</p>
-                    </a>
-                    <a href="tokoh.html#nakula" class="pandawa-item">
-                        <img src="image/wayang/Nakula.png" alt="Nakula">
-                        <p>Nakula</p>
-                    </a>
-                    <a href="tokoh.html#sadewa" class="pandawa-item">
-                        <img src="image/wayang/Raden_Sadewo.png" alt="Raden Sadewo">
-                        <p>Raden Sadewo</p>
-                    </a>
-                </div>
+    <a class="pandawa-item" data-nama="Punto Dewo"> 
+        <img src="image/wayang/Punto_Demo.png" alt="Punto Dewo">
+        <p>Punto Dewo</p>
+    </a>
+    <a class="pandawa-item" data-nama="Bima Sena">
+        <img src="image/wayang/Bima_Sena.png" alt="Bima Sena">
+        <p>Bima Sena</p>
+    </a>
+    <a class="pandawa-item" data-nama="Arjuna">
+        <img src="image/wayang/Raden_Arjuna.png" alt="Raden Arjuna">
+        <p>Raden Arjuna</p>
+    </a>
+    <a class="pandawa-item" data-nama="Nakula">
+        <img src="image/wayang/Nakula.png" alt="Nakula">
+        <p>Nakula</p>
+    </a>
+    <a class="pandawa-item" data-nama="Raden Sadewo">
+        <img src="image/wayang/Raden_Sadewo.png" alt="Raden Sadewo">
+        <p>Raden Sadewo</p>
+    </a>
+</div>
             </section>
             
-            
-            
         </section>
         </section>
+        <div class="quiz-container">
+    
+            <div class="quiz-text-content">
+                <h2 class="quiz-question">Dari pulau manakah asal Wayang?</h2>
+                <p class="quiz-hint">Petunjuk: Pulau ke-4 terbesar di Indonesia</p>
+                
+                <div class="quiz-options" id="quiz-options">
+                    <button class="quiz-btn" data-answer="wrong">Pulau Langkawi</button>
+                    <button class="quiz-btn" data-answer="wrong">Kepulauan Galapagos</button>
+                    <button class="quiz-btn" data-answer="wrong">Pulau Sumatra</button>
+                    <button class="quiz-btn" data-answer="correct">Pulau Jawa</button>
+                </div>
+                
+                <a href="sejarah.html" class="quiz-learn-more" id="learn-more-btn" style="display: none;">Pelajari lebih lanjut</a>
+            </div>
+            
+            <div class="quiz-map-content">
+                <img src="image/Quiz/Jawa.png" alt="Peta Indonesia" class="quiz-map-image">
+                </div>
+        </div>
 
 </body>
 </html>
