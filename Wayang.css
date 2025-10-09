@@ -934,6 +934,105 @@ main#fakta-container {
 
 .fakta-page .hero-fakta { background-image: url('image/fakta/Kayon.jpg'); }
 
+/* Gambar Latar Fakta */
+#fakta-1 {
+  background-image: url('image/Beranda/wayang_2.jpg');
+}
+
+#fakta-2 {
+  background-image: url('image/fakta/Makna.jpg');
+}
+
+#fakta-3 {
+  background-image: url('image/fakta/Penonton.jpg');
+}
+
+#fakta-4 {
+  background-image: url('image/fakta/Kulit.jpg');
+}
+
+#fakta-5 {
+  background-image: url('image/fakta/Kayon.jpg');
+}
+
+#fakta-6 {
+  background-image: url('image/fakta/UNESCO.png');
+}
+
+#fakta-7 {
+  background-image: url('image/fakta/Mahabharata.jpg');
+}
+
+#fakta-8 {
+  background-image: url('image/fakta/dalang.jpg');
+}
+
+/* --- Gambar Halaman Perlengkapan --- */
+.perlengkapan-page .fakta-section:first-child {
+  background-image: url('image/beranda/Wayang_7.jpg');
+}
+
+.perlengkapan-page .hero-fakta {
+  background-image: url('image/beranda/Wayang_7.jpg');
+}
+
+.perlengkapan-page #fakta-1 {
+  background-image: url('image/perlengkapan/kelir.jpg');
+}
+
+.perlengkapan-page #fakta-2 {
+  background-image: url('image/perlengkapan/Bléncong.jpeg');
+}
+
+.perlengkapan-page #fakta-3 {
+  background-image: url('image/perlengkapan/Debog.jpg');
+}
+
+.perlengkapan-page #fakta-4 {
+  background-image: url('image/perlengkapan/Cempala.jpg');
+}
+
+.perlengkapan-page #fakta-5 {
+  background-image: url('image/perlengkapan/Kotak.jpg');
+}
+
+.perlengkapan-page #fakta-6 {
+  background-image: url('image/perlengkapan/Gamelan.jpg');
+}
+
+.perlengkapan-page #fakta-7 {
+  background-image: url('image/perlengkapan/Kepyak.jpg');
+}
+
+.perlengkapan-page #fakta-8 {
+  background-image: url('image/perlengkapan/Letak.jpg');
+}
+
+/* Gambar Latar KHUSUS Halaman Sejarah */
+.sejarah-page .hero-fakta {
+  background-image: url('image/sejarah/adab.jpg');
+}
+
+.sejarah-page #fakta-1 {
+  background-image: url('image/fakta/UNESCO.png');
+}
+
+.sejarah-page #fakta-2 {
+  background-image: url('image/sejarah/sejarah.jpg');
+}
+
+.sejarah-page #fakta-3 {
+  background-image: url('image/sejarah/adab.jpg');
+}
+
+.sejarah-page #fakta-4 {
+  background-image: url('image/sejarah/sejarah2.jpg');
+}
+
+.sejarah-page #fakta-5 {
+  background-image: url('image/fakta/Penonton.jpg');
+}
+
 /* ======================================================= */
 /* 11. HALAMAN EKSPLORASI                                  */
 /* ======================================================= */
